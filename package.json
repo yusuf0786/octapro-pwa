@@ -1,0 +1,20 @@
+{
+  "name": "octapro-pwa",
+  "version": "1.0.0",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "sass" : "sass scss/style.scss:styles/style.css --watch --no-source-map"
+  },
+  "author": "Octapro",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1",
+    "http-proxy-middleware": "^3.0.3"
+  },
+  "devDependencies": {
+    "sass": "^1.80.4"
+  }
+}
