@@ -1449,26 +1449,26 @@ p {
 
 .header-clear {
   padding-top: 55px;
-  padding-top: calc(55px + (constant(safe-area-inset-top))*0.8) !important;
-  padding-top: calc(55px + (env(safe-area-inset-top))*0.8) !important;
+  padding-top: calc(55px + (constant(safe-area-inset-top)) * 0.8) !important;
+  padding-top: calc(55px + (env(safe-area-inset-top)) * 0.8) !important;
 }
 
 .header-clear-small {
   padding-top: calc(55px - 25px);
-  padding-top: calc(calc(55px - 25px) + (constant(safe-area-inset-top))*0.8) !important;
-  padding-top: calc(calc(55px - 25px) + (env(safe-area-inset-top))*0.8) !important;
+  padding-top: calc(55px - 25px + (constant(safe-area-inset-top)) * 0.8) !important;
+  padding-top: calc(55px - 25px + (env(safe-area-inset-top)) * 0.8) !important;
 }
 
 .header-clear-medium {
   padding-top: calc(55px + 25px);
-  padding-top: calc(calc(55px + 25px) + (constant(safe-area-inset-top))*0.8) !important;
-  padding-top: calc(calc(55px + 25px) + (env(safe-area-inset-top))*0.8) !important;
+  padding-top: calc(55px + 25px + (constant(safe-area-inset-top)) * 0.8) !important;
+  padding-top: calc(55px + 25px + (env(safe-area-inset-top)) * 0.8) !important;
 }
 
 .header-clear-large {
   padding-top: calc(55px + 40px);
-  padding-top: calc(calc(55px + 40px) + (constant(safe-area-inset-top))*0.8) !important;
-  padding-top: calc(calc(55px + 40px) + (env(safe-area-inset-top))*0.8) !important;
+  padding-top: calc(55px + 40px + (constant(safe-area-inset-top)) * 0.8) !important;
+  padding-top: calc(55px + 40px + (env(safe-area-inset-top)) * 0.8) !important;
 }
 
 /*Header Bar Under*/
@@ -2234,14 +2234,14 @@ img.mx-auto {
 }
 
 .notch-clear {
-  padding-top: calc(0px + (constant(safe-area-inset-top))*0.8) !important;
-  padding-top: calc(0px + (env(safe-area-inset-top))*0.8) !important;
+  padding-top: calc(0px + (constant(safe-area-inset-top)) * 0.8) !important;
+  padding-top: calc(0px + (env(safe-area-inset-top)) * 0.8) !important;
 }
 
 .notch-push {
   transform: translateY(-150%) !important;
-  top: calc(0px + (constant(safe-area-inset-top))*0.8) !important;
-  top: calc(0px + (env(safe-area-inset-top))*0.8) !important;
+  top: calc(0px + (constant(safe-area-inset-top)) * 0.8) !important;
+  top: calc(0px + (env(safe-area-inset-top)) * 0.8) !important;
 }
 
 /*Hide Show Based on Color Scheme*/
@@ -2925,7 +2925,7 @@ img.mx-auto {
   right: 0px;
   font-size: 16px;
   margin-top: 0.5px;
-  content: "";
+  content: "\f26a";
   opacity: 1;
   color: #a0d468;
 }
