@@ -891,4 +891,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     init_template();
+
+    let redirectOnceChecked = false
+    sessionStorage.getItem("redirectOnceChecked") ? redirectOnceChecked = sessionStorage.getItem("redirectOnceChecked") : sessionStorage.setItem("redirectOnceChecked", redirectOnceChecked)
+
+    if (window.innerWidth <= "768" && !redirectOnceChecked) {
+        window.location.href = "index.html"
+        redirectOnceChecked = true
+        sessionStorage.setItem("redirectOnceChecked", redirectOnceChecked)
+    } else {
+        window.location.href = "web-page.html"
+        redirectOnceChecked = true
+        sessionStorage.setItem("redirectOnceChecked", redirectOnceChecked)
+    }
+    
 });
