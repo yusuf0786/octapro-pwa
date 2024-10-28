@@ -896,7 +896,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sessionStorage.getItem("redirectOnceChecked") ? redirectOnceChecked = sessionStorage.getItem("redirectOnceChecked") : sessionStorage.setItem("redirectOnceChecked", redirectOnceChecked)
 
     if (window.innerWidth <= "768" && !redirectOnceChecked) {
-        window.location.href = "index.html"
+        window.location.href = "index.php"
         redirectOnceChecked = true
         sessionStorage.setItem("redirectOnceChecked", redirectOnceChecked)
     } else {

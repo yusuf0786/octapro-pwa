@@ -22,14 +22,8 @@
 <!-- Page Wrapper-->
 <div id="page">
 
-    <!-- Footer Bar -->
-    <div id="footer-bar" class="footer-bar-1 footer-bar-detached">
-        <a href="page-wallet.html"><i class="bi bi-wallet2"></i><span>Cards</span></a>
-        <a href="page-activity.html"><i class="bi bi-graph-up"></i><span>Activity</span></a>
-        <a href="index-waves.html" class="circle-nav-2"><i class="bi bi-house-fill"></i><span>Home</span></a>
-        <a href="page-payments.html"><i class="bi bi-receipt"></i><span>Payments</span></a>
-        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-sidebar"><i class="bi bi-three-dots"></i><span>More</span></a>
-    </div>
+    <!-- loader -->
+    <?php require_once("./components/footer-bar.php") ?>
 
     <!-- Page Content - Only Page Elements Here-->
     <div class="page-content footer-clear">
@@ -344,27 +338,27 @@
     </div>
 
 	<div class="offcanvas offcanvas-bottom rounded-m offcanvas-detached" id="menu-install-pwa-ios">
-		   <div class="content">
-		   <img src="app/icons/icon-128x128.png" alt="img" width="80" class="rounded-m mx-auto my-4">
-			  <h1 class="text-center">Install PayApp</h1>
-			  <p class="boxed-text-xl">
-				  Install PayApp on your home screen, and access it just like a regular app. Open your Safari menu and tap "Add to Home Screen".
-			  </p>
-			   <a href="#" class="pwa-dismiss close-menu color-theme text-uppercase font-900 opacity-50 font-11 text-center d-block mt-n2" data-bs-dismiss="offcanvas">Maybe Later</a>
-		   </div>
-	   </div>
+        <div class="content">
+        <img src="app/icons/icon-128x128.png" alt="img" width="80" class="rounded-m mx-auto my-4">
+            <h1 class="text-center">Install PayApp</h1>
+            <p class="boxed-text-xl">
+                Install PayApp on your home screen, and access it just like a regular app. Open your Safari menu and tap "Add to Home Screen".
+            </p>
+            <a href="#" class="pwa-dismiss close-menu color-theme text-uppercase font-900 opacity-50 font-11 text-center d-block mt-n2" data-bs-dismiss="offcanvas">Maybe Later</a>
+        </div>
+    </div>
 
-	   <div class="offcanvas offcanvas-bottom rounded-m offcanvas-detached" id="menu-install-pwa-android">
-		   <div class="content">
-			   <img src="app/icons/icon-128x128.png" alt="img" width="80" class="rounded-m mx-auto my-4">
-			   <h1 class="text-center">Install PayApp</h1>
-			   <p class="boxed-text-l">
-				   Install PayApp to your Home Screen to enjoy a unique and native experience.
-			   </p>
-			   <a href="#" class="pwa-install btn btn-m rounded-s text-uppercase font-900 gradient-highlight shadow-bg shadow-bg-s btn-full">Add to Home Screen</a><br>
-			   <a href="#" data-bs-dismiss="offcanvas" class="pwa-dismiss close-menu color-theme text-uppercase font-900 opacity-60 font-11 text-center d-block mt-n1">Maybe later</a>
-		   </div>
-	   </div>
+    <div class="offcanvas offcanvas-bottom rounded-m offcanvas-detached" id="menu-install-pwa-android">
+        <div class="content">
+            <img src="app/icons/icon-128x128.png" alt="img" width="80" class="rounded-m mx-auto my-4">
+            <h1 class="text-center">Install PayApp</h1>
+            <p class="boxed-text-l">
+                Install PayApp to your Home Screen to enjoy a unique and native experience.
+            </p>
+            <a href="#" class="pwa-install btn btn-m rounded-s text-uppercase font-900 gradient-highlight shadow-bg shadow-bg-s btn-full">Add to Home Screen</a><br>
+            <a href="#" data-bs-dismiss="offcanvas" class="pwa-dismiss close-menu color-theme text-uppercase font-900 opacity-60 font-11 text-center d-block mt-n1">Maybe later</a>
+        </div>
+    </div>
 
 </div>
 <!-- End of Page ID-->
