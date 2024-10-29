@@ -810,6 +810,12 @@ document.addEventListener('DOMContentLoaded', () => {
             trigger: '.chart'
           },
           {
+            id: 'apex-pie-chart',
+            plug: 'apex/apexcharts.js',
+            call: 'apex/apex-call.js',
+            trigger: '.pie-chart'
+          },
+          {
             id: 'demo-functions', // can be deleted
             call: 'demo/demo.js', // can be deleted
             trigger: '.demo-boxed' // can be deleted
