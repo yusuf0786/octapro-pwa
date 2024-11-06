@@ -95,17 +95,18 @@ if(document.querySelector("#pieChart")) {
 		  title: {
 			text: "Distribution of Categories",
 			align: "center",
-			margin: 20,
-			offsetY: 10,
+			margin: 6,
+			offsetY: 0,
 			style: {
-			  fontSize: "22px",
+			  fontSize: "13px",
 			},
 		  },
-		  legend: {
-			position: "bottom",
-		  },
+		//   legend: {
+		// 	position: "bottom",
+		//   },
+		  legend: false,
 		  dataLabels: {
-			enabled: true, // Enable data labels
+			enabled: false, // Enable data labels
 			formatter: (val, opts) => {
 			  // Return the label instead of the value
 			  return opts.w.globals.labels[opts.seriesIndex];

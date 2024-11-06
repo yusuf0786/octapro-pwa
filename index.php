@@ -52,12 +52,12 @@
                 </select>
             </div>
             <div class="row">
-                <div class="col-12">
-
-                    <div class="pie-chart mx-auto no-click" id="pieChart"></div>
+                <div class="col-5">
+                    
+                    <div class="pie-chart mx-auto no-click w-100s" id="pieChart" style="width: 125%;"></div>
 
                 </div>
-                <div class="col-12">
+                <div class="col-7">
 
                     <div class="content mt-0 mb-0">
         
