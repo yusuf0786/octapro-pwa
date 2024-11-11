@@ -98,7 +98,7 @@ if(document.querySelector("#pieChart")) {
 			margin: 6,
 			offsetY: 0,
 			style: {
-			  fontSize: "13px",
+			  fontSize: "15px",
 			},
 		  },
 		//   legend: {
@@ -117,8 +117,10 @@ if(document.querySelector("#pieChart")) {
 		  },
     };
 
-    var chart = new ApexCharts(document.querySelector("#pieChart"), pieChartOptions);
-    chart.render();
+    window.pieChart = new ApexCharts(document.querySelector("#pieChart"), pieChartOptions);
+    window.pieChart.render();
+    // var chart = new ApexCharts(document.querySelector("#pieChart"), pieChartOptions);
+    // chart.render();
 }
 
 if(document.querySelector("#chart-activity")) {

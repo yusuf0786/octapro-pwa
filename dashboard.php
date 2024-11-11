@@ -15,9 +15,16 @@
 <meta id="theme-check" name="theme-color" content="#FFFFFF">
 <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png"></head>
 
+<!-- jquery -->
+<script src="scripts/jquery.min.js"></script>
+
+<!-- Daterangepikcer CSS -->
+<link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+
 <body class="theme-light">
 
 <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+
 
 <!-- Page Wrapper-->
 <div id="page">
@@ -35,7 +42,8 @@
         <div class="card card-style px-0">
             <div class="form-custom form-label form-border form-icon px-3 pt-1">
                 <i class="bi bi-calendar font-13"></i>
-                <select class="form-select rounded-xs" id="c6a">
+                <input type="text" name="filter" id="filterByDateRange" class="form-control" placeholder="Select Date">
+                <!-- <select class="form-select rounded-xs" id="c6a">
                     <option value="0" selected>Current Month</option>
                     <option value="01">January</option>
                     <option value="02">February</option>
@@ -49,81 +57,73 @@
                     <option value="10">Octomber</option>
                     <option value="11">November</option>
                     <option value="12">December</option>
-                </select>
+                </select> -->
             </div>
             <div class="row">
-                <div class="col-5">
+                <div class="col-12">
                     
-                    <div class="pie-chart mx-auto no-click w-100s" id="pieChart" style="width: 125%;"></div>
+                    <div class="pie-chart mx-auto no-click w-100s" id="pieChart" style="width: 65%;"></div>
 
                 </div>
-                <div class="col-7">
+                <div class="col-12">
 
                     <div class="content mt-0 mb-0">
         
-                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3">
+                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_1">
                             <div class="align-self-center">
                                 <span class="icon rounded-s me-2 gradient-red shadow-bg shadow-bg-xs"><i class="bi bi-droplet font-18 color-white"></i></span>
                             </div>
                             <div class="align-self-center ps-1">
-                                <h5 class="pt-1 mb-n1">Utilities</h5>
-                                <p class="mb-0 font-11 opacity-50">12 Transactions</p>
+                                <h5 class="mb-n1">Utilities</h5>
+                                <!-- <p class="mb-0 font-11 opacity-50">12 Transactions</p> -->
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1 color-red-dark">$1530.41</h4>
-                                <p class="mb-0 font-12 opacity-50">24.53%</p>
+                                <h4 class="mb-n1 color-red-dark">$1530.41</h4>
+                                <!-- <p class="mb-0 font-12 opacity-50">24.53%</p> -->
                             </div>
                         </a>
-                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3">
+                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_2">
                             <div class="align-self-center">
                                 <span class="icon rounded-s me-2 gradient-green shadow-bg shadow-bg-xs"><i class="bi bi-wallet font-18 color-white"></i></span>
                             </div>
                             <div class="align-self-center ps-1">
-                                <h5 class="pt-1 mb-n1">Income</h5>
-                                <p class="mb-0 font-11 opacity-50">15 Transactions</p>
+                                <h5 class="mb-n1">Income</h5>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1 color-green-dark">$4530.55</h4>
-                                <p class="mb-0 font-12 opacity-50">41.27%</p>
+                                <h4 class="mb-n1 color-green-dark">$4530.55</h4>
                             </div>
                         </a>
-                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3">
+                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_3">
                             <div class="align-self-center">
                                 <span class="icon rounded-s me-2 gradient-blue shadow-bg shadow-bg-xs"><i class="bi bi-arrow-repeat font-20 color-white"></i></span>
                             </div>
                             <div class="align-self-center ps-1">
-                                <h5 class="pt-1 mb-n1">Subscriptions</h5>
-                                <p class="mb-0 font-11 opacity-50">23 Transactions</p>
+                                <h5 class="mb-n1">Subscriptions</h5>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1 color-red-dark">$340.31</h4>
-                                <p class="mb-0 font-12 opacity-50">21.27%</p>
+                                <h4 class="mb-n1 color-red-dark">$340.31</h4>
                             </div>
                         </a>
-                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3">
+                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_4">
                             <div class="align-self-center">
                                 <span class="icon rounded-s me-2 gradient-mint shadow-bg shadow-bg-xs"><i class="bi bi-plus font-24 color-white"></i></span>
                             </div>
                             <div class="align-self-center ps-1">
-                                <h5 class="pt-1 mb-n1">Medical</h5>
-                                <p class="mb-0 font-11 opacity-50">3 Transactions</p>
+                                <h5 class="mb-n1">Medical</h5>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1 color-red-dark">$270.31</h4>
-                                <p class="mb-0 font-12 opacity-50">14.43%</p>
+                                <h4 class="mb-n1 color-red-dark">$270.31</h4>
                             </div>
                         </a>
-                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3">
+                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_5">
                             <div class="align-self-center">
                                 <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-heart font-16 color-white"></i></span>
                             </div>
                             <div class="align-self-center ps-1">
-                                <h5 class="pt-1 mb-n1">Random</h5>
-                                <p class="mb-0 font-11 opacity-50">3 Transactions</p>
+                                <h5 class="mb-n1">Random</h5>
                             </div>
                             <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1 color-red-dark">$480.31</h4>
-                                <p class="mb-0 font-12 opacity-50">12.31%</p>
+                                <h4 class="mb-n1 color-red-dark">$480.31</h4>
                             </div>
                         </a>
                         
@@ -145,30 +145,102 @@
                     <div class="mt-3"></div>
                     <!-- Tab Current -->
                     <div class="collapse show" id="tab-4" data-bs-parent="#tab-group-2">
-                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
-                            <div class="align-self-center">
-                                <h5 class="pt-1 mb-n1">Water Bill</h5>
-                                <p class="mb-0 font-11 opacity-70">Overdue by 3 Days</p>
+
+                    <!-- task card starts here -->
+                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
+
+                        <div class="card card-style w-100 border">
+                            <div class="content">
+
+                                <div class="d-flex flex-wrap align-items-center">
+                                    <div class="d-flex align-items-start mb-2">
+                                        <i class="bi bi-check-circle-fill font-24 color-green-dark me-2"></i>
+                                        <h3 class="mb-0">Keyur Joshi</h3>
+                                    </div>
+                                    <div class="mb-2">
+                                        <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded ms-auto me-2">Repair</button>
+                                        <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">scheduled</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-2">
+                                    <div class="me-2">
+                                        <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
+                                    </div>
+                                    <p>Problem</p>
+                                </div>
+                                <div class="d-flex align-items-start mb-2">
+                                    <div class="me-2">
+                                        <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
+                                    </div>
+                                    <p>Address</p>
+                                </div>
+                                <div class="d-flex align-items-start mb-2">
+                                    <div class="me-2">
+                                        <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
+                                    </div>
+                                    <p>21/03/2023 - 04:00pm</p>
+                                </div>
+                                <div class="d-flex align-items-center border-top pt-2">
+                                    <div class="border-end w-50">
+                                        <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded me-2">Accept</button>
+                                    </div>
+                                    <div class="ps-3 w-50">
+                                        <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">Reject</button>
+                                    </div>
+                                </div>
+                                
                             </div>
-                            <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1">$15.35</h4>
-                                <p class="mb-0 font-11 color-red-light">Bill Unpaid</p>
-                            </div>
-                        </a>
+                        </div>
+
+                    </a> <!-- task card ends here -->
+
                     </div>
                     
                     <!-- Tab Upcoming -->
                     <div class="collapse" id="tab-5" data-bs-parent="#tab-group-2">
+                    
+                        <!-- task card starts here -->
                         <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
-                            <div class="align-self-center">
-                                <h5 class="pt-1 mb-n1">Water Bill</h5>
-                                <p class="mb-0 font-11 opacity-70">Overdue by 3 Days</p>
+
+                            <div class="card card-style border w-100">
+                                <div class="content">
+
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="d-flex align-items-start">
+                                            <i class="bi bi-check-circle-fill font-24 color-green-dark me-2"></i>
+                                            <h3 class="mb-0">Keyur Joshi</h3>
+                                        </div>
+                                        <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded ms-auto me-2">Repair</button>
+                                        <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">scheduled</button>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-2">
+                                        <div class="me-2">
+                                            <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
+                                        </div>
+                                        <p>Problem</p>
+                                    </div>
+                                    <div class="d-flex align-items-start mb-2">
+                                        <div class="me-2">
+                                            <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
+                                        </div>
+                                        <p>Address</p>
+                                    </div>
+                                    <div class="d-flex align-items-center border-top pt-2">
+                                        <div class="d-flex align-items-start">
+                                            <i class="bi bi-check-circle-fill font-24 color-green-dark me-2"></i>
+                                            <p>21/03/2023 - 04:00pm</p>
+                                        </div>
+                                        <div class="border-start ms-auto ps-3">
+                                            <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded me-2">Accept</button>
+                                            <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">Reject</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
                             </div>
-                            <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1">$15.35</h4>
-                                <p class="mb-0 font-11 color-red-light">Bill Unpaid</p>
-                            </div>
-                        </a>
+
+                        </a> <!-- task card ends here -->
+
                     </div>
                 </div>
             </div>
@@ -314,6 +386,91 @@
 <!-- End of Page ID-->
 
 <script src="scripts/bootstrap.min.js"></script>
+
+<!-- Datepicker Core JS -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/bootstrap-datetimepicker.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+
 <script src="scripts/custom.js"></script>
+<script>
+    $(function(){
+        const pageOrigin = window.location.origin;
+        let fetchChartsDataApi = ''
+        switch (pageOrigin) {
+            case 'http://localhost':
+                fetchChartsDataApi = (date) => `${pageOrigin}:3000/api/app/getrcd//tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
+            break;
+            case 'https://fielddesk.in':
+                fetchChartsDataApi = (date) => `${pageOrigin}/api/app/getrcd//tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
+            break;
+        }
+        
+        var start = moment().subtract(29, 'days');
+        var end = moment();
+    
+        $('#filterByDateRange').daterangepicker({
+            buttonClasses: ' btn',
+            applyClass: 'btn-primary',
+            cancelClass: 'btn-outline-primary text-primary',
+    
+            startDate: start,
+            endDate: end,
+            ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            },
+            locale: {
+                format: 'DD-MM-YYYY',
+                applyLabel: 'Ok',
+                separator: ' / ',
+                direction: 'rtl',
+            },
+            opens: 'left'
+        }, function(start, end, label) {
+            $('#filterByDateRange').val( start.format('DD-MM-YYYY') + ' / ' + end.format('DD-MM-YYYY'));
+        });
+    
+        // Adjust the dropdown menu width to match the input field width
+        $('#filterByDateRange').on('show.daterangepicker', function(ev, picker) {
+            picker.container.css('width', $(this).outerWidth() + 'px');
+        });
+    
+        $('#filterByDateRange').on('apply.daterangepicker', function(ev, picker) {
+            const selectedRange = $(this).val();
+            fetchChartsData(selectedRange);
+        });
+    
+        async function fetchChartsData(dateParam) {
+            try {
+                const date = dateParam.replace(/\s*\/\s*/, '/')
+                
+                const response = await fetch(fetchChartsDataApi(date));
+                const data = await response.json();
+                const ServiceCatgegory = data.ServiceCatgegory
+                const service_type = data.service_type
+        
+                const newSeries = ServiceCatgegory.map(d => d.service_count)
+                const newLabels = ServiceCatgegory.map(d => d.status)
+                window.pieChart.updateSeries(newSeries);
+                window.pieChart.updateOptions({ labels: newLabels });
+
+                service_type.map((d,i) => {
+                    $(`#chartDataItem_${i+1}`).find("h5").text(d.name)
+                    $(`#chartDataItem_${i+1}`).find("h4").text(d.service_count)
+                })
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        setTimeout(() => {
+            fetchChartsData($('#filterByDateRange').val());
+        }, 500);
+    })
+</script>
 </body>
 </html>

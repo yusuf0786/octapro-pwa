@@ -21,7 +21,12 @@
 </style>
 <body class="mobile-body">
 
-    <iframe src="index.php" frameborder="0"></iframe>
+    <iframe src="dashboard.php" frameborder="0"></iframe>
 
+    <script>
+    if (window.innerWidth <= 768) {
+        window.location.href = "dashboard.php";
+    }
+    </script>
 </body>
 </html>
