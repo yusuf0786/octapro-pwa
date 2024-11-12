@@ -71,7 +71,7 @@
         
                         <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_1">
                             <div class="align-self-center">
-                                <span class="icon rounded-s me-2 gradient-red shadow-bg shadow-bg-xs"><i class="bi bi-droplet font-18 color-white"></i></span>
+                                <span class="icon rounded-xs me-2 gradient-red shadow-bg shadow-bg-xs"><i class="bi bi-droplet font-18 color-white"></i></span>
                             </div>
                             <div class="align-self-center ps-1">
                                 <h5 class="mb-n1">Utilities</h5>
@@ -84,7 +84,7 @@
                         </a>
                         <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_2">
                             <div class="align-self-center">
-                                <span class="icon rounded-s me-2 gradient-green shadow-bg shadow-bg-xs"><i class="bi bi-wallet font-18 color-white"></i></span>
+                                <span class="icon rounded-xs me-2 gradient-green shadow-bg shadow-bg-xs"><i class="bi bi-wallet font-18 color-white"></i></span>
                             </div>
                             <div class="align-self-center ps-1">
                                 <h5 class="mb-n1">Income</h5>
@@ -95,7 +95,7 @@
                         </a>
                         <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_3">
                             <div class="align-self-center">
-                                <span class="icon rounded-s me-2 gradient-blue shadow-bg shadow-bg-xs"><i class="bi bi-arrow-repeat font-20 color-white"></i></span>
+                                <span class="icon rounded-xs me-2 gradient-blue shadow-bg shadow-bg-xs"><i class="bi bi-arrow-repeat font-20 color-white"></i></span>
                             </div>
                             <div class="align-self-center ps-1">
                                 <h5 class="mb-n1">Subscriptions</h5>
@@ -106,7 +106,7 @@
                         </a>
                         <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_4">
                             <div class="align-self-center">
-                                <span class="icon rounded-s me-2 gradient-mint shadow-bg shadow-bg-xs"><i class="bi bi-plus font-24 color-white"></i></span>
+                                <span class="icon rounded-xs me-2 gradient-mint shadow-bg shadow-bg-xs"><i class="bi bi-plus font-24 color-white"></i></span>
                             </div>
                             <div class="align-self-center ps-1">
                                 <h5 class="mb-n1">Medical</h5>
@@ -117,7 +117,7 @@
                         </a>
                         <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_5">
                             <div class="align-self-center">
-                                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-heart font-16 color-white"></i></span>
+                                <span class="icon rounded-xs me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-heart font-16 color-white"></i></span>
                             </div>
                             <div class="align-self-center ps-1">
                                 <h5 class="mb-n1">Random</h5>
@@ -134,117 +134,55 @@
 
         </div>
 
-        <!-- tasks tabs -->
-        <div class="card card-style">
-            <div class="content mb-0">
-                <div class="tabs tabs-pill" id="tab-group-2">
-                    <div class="tab-controls rounded-m p-1 overflow-visible">
-                        <a class="font-13 rounded-s py-1 shadow-bg shadow-bg-s" data-bs-toggle="collapse" href="#tab-4" aria-expanded="true">Current</a>
-                        <a class="font-13 rounded-s py-1 shadow-bg shadow-bg-s" data-bs-toggle="collapse" href="#tab-5" aria-expanded="false">Upcoming</a>
-                    </div>
-                    <div class="mt-3"></div>
-                    <!-- Tab Current -->
-                    <div class="collapse show" id="tab-4" data-bs-parent="#tab-group-2">
+        <div class="divider"></div>
 
-                    <!-- task card starts here -->
-                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
+        <!-- task card starts here -->
+        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
 
-                        <div class="card card-style w-100 border">
-                            <div class="content">
+            <div class="card card-style w-100 border">
+                <div class="content">
 
-                                <div class="d-flex flex-wrap align-items-center">
-                                    <div class="d-flex align-items-start mb-2">
-                                        <i class="bi bi-check-circle-fill font-24 color-green-dark me-2"></i>
-                                        <h3 class="mb-0">Keyur Joshi</h3>
-                                    </div>
-                                    <div class="mb-2">
-                                        <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded ms-auto me-2">Repair</button>
-                                        <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">scheduled</button>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-start mb-2">
-                                    <div class="me-2">
-                                        <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
-                                    </div>
-                                    <p>Problem</p>
-                                </div>
-                                <div class="d-flex align-items-start mb-2">
-                                    <div class="me-2">
-                                        <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
-                                    </div>
-                                    <p>Address</p>
-                                </div>
-                                <div class="d-flex align-items-start mb-2">
-                                    <div class="me-2">
-                                        <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
-                                    </div>
-                                    <p>21/03/2023 - 04:00pm</p>
-                                </div>
-                                <div class="d-flex align-items-center border-top pt-2">
-                                    <div class="border-end w-50">
-                                        <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded me-2">Accept</button>
-                                    </div>
-                                    <div class="ps-3 w-50">
-                                        <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">Reject</button>
-                                    </div>
-                                </div>
-                                
-                            </div>
+                    <div class="d-flex flex-wrap align-items-center">
+                        <div class="d-flex align-items-start mb-2">
+                            <i class="bi bi-check-circle-fill font-24 color-green-dark me-2"></i>
+                            <h3 class="mb-0">Keyur Joshi</h3>
                         </div>
-
-                    </a> <!-- task card ends here -->
-
+                        <div class="mb-2 ms-auto">
+                            <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded ms-auto me-2">Repair</button>
+                            <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">scheduled</button>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mb-2">
+                        <div class="me-2">
+                            <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
+                        </div>
+                        <p>Problem</p>
+                    </div>
+                    <div class="d-flex align-items-start mb-2">
+                        <div class="me-2">
+                            <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
+                        </div>
+                        <p>Address</p>
+                    </div>
+                    <div class="d-flex align-items-start mb-2">
+                        <div class="me-2">
+                            <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
+                        </div>
+                        <p>21/03/2023 - 04:00pm</p>
+                    </div>
+                    <div class="d-flex align-items-center border-top pt-2">
+                        <div class="border-end w-50">
+                            <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded me-2">Accept</button>
+                        </div>
+                        <div class="ps-3 w-50">
+                            <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">Reject</button>
+                        </div>
                     </div>
                     
-                    <!-- Tab Upcoming -->
-                    <div class="collapse" id="tab-5" data-bs-parent="#tab-group-2">
-                    
-                        <!-- task card starts here -->
-                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
-
-                            <div class="card card-style border w-100">
-                                <div class="content">
-
-                                    <div class="d-flex align-items-center mb-2">
-                                        <div class="d-flex align-items-start">
-                                            <i class="bi bi-check-circle-fill font-24 color-green-dark me-2"></i>
-                                            <h3 class="mb-0">Keyur Joshi</h3>
-                                        </div>
-                                        <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded ms-auto me-2">Repair</button>
-                                        <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">scheduled</button>
-                                    </div>
-                                    <div class="d-flex align-items-start mb-2">
-                                        <div class="me-2">
-                                            <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
-                                        </div>
-                                        <p>Problem</p>
-                                    </div>
-                                    <div class="d-flex align-items-start mb-2">
-                                        <div class="me-2">
-                                            <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
-                                        </div>
-                                        <p>Address</p>
-                                    </div>
-                                    <div class="d-flex align-items-center border-top pt-2">
-                                        <div class="d-flex align-items-start">
-                                            <i class="bi bi-check-circle-fill font-24 color-green-dark me-2"></i>
-                                            <p>21/03/2023 - 04:00pm</p>
-                                        </div>
-                                        <div class="border-start ms-auto ps-3">
-                                            <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded me-2">Accept</button>
-                                            <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">Reject</button>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-
-                        </a> <!-- task card ends here -->
-
-                    </div>
                 </div>
             </div>
-        </div>
+
+        </a> <!-- task card ends here -->
 
     </div>
     <!-- End of Page Content-->
@@ -402,7 +340,7 @@
                 fetchChartsDataApi = (date) => `${pageOrigin}:3000/api/app/getrcd//tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
             break;
             case 'https://fielddesk.in':
-                fetchChartsDataApi = (date) => `${pageOrigin}/api/app/getrcd//tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
+                fetchChartsDataApi = (date) => `${pageOrigin}/app/getrcd//tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
             break;
         }
         

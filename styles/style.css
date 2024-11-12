@@ -4669,3 +4669,18 @@ input[type=range] {
 .card-stack.card-stack-active .card:last-child {
   margin-bottom: 20px !important;
 }
+
+h4 {
+  font-size: 15px;
+}
+
+h5 {
+  font-size: 13px;
+}
+
+.icon {
+  border-radius: 12px;
+  width: 35px;
+  height: 35px;
+  line-height: 36px;
+}
