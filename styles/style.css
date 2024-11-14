@@ -1489,13 +1489,13 @@ p {
 }
 
 .page-title h1 {
-  font-size: 28px;
+  font-size: 18px;
   margin-bottom: -3px;
 }
 
 .page-title p {
   margin-bottom: -6px;
-  font-size: 13px;
+  font-size: 11px;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
 }
@@ -1734,14 +1734,14 @@ p {
 
 .footer-bar-detached {
   border-radius: 25px;
-  left: 7px !important;
-  right: 7px !important;
+  left: 0px !important;
+  right: 0px !important;
   bottom: 15px !important;
   box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.1) !important;
 }
 
 #footer-bar:not(.iosTabBar) {
-  bottom: 15px !important;
+  bottom: 0px !important;
 }
 
 .theme-light #footer-bar {
@@ -2979,7 +2979,7 @@ img.mx-auto {
 .card-style {
   overflow: hidden;
   border-radius: 22px;
-  margin: 0px 15px 30px 15px;
+  margin: 0px 15px 15px 15px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.03) 0px 20px 25px -5px, rgba(0, 0, 0, 0.02) 0px 10px 10px -5px;
   background-size: cover;
@@ -3087,7 +3087,7 @@ img.mx-auto {
   height: 1px;
   display: block;
   background-color: rgba(0, 0, 0, 0.07);
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .divider-margins {
@@ -3234,6 +3234,12 @@ divider:after {
   padding: 3px 4px 2px 5px;
   font-style: normal;
   margin-top: -3px;
+}
+
+.icon .badge.rounded-circle {
+  padding: 2px 4px 3px 5px;
+  margin-top: -6px;
+  margin-left: -6px;
 }
 
 .icon-xxs {
@@ -4670,6 +4676,10 @@ input[type=range] {
   margin-bottom: 20px !important;
 }
 
+h3 {
+  font-size: 16px;
+}
+
 h4 {
   font-size: 15px;
 }
@@ -4678,9 +4688,17 @@ h5 {
   font-size: 13px;
 }
 
-.icon {
+body {
+  font-style: 11px;
+}
+
+.icon-very-small {
   border-radius: 12px;
   width: 35px;
   height: 35px;
   line-height: 36px;
+}
+
+.btn {
+  font-size: 11px;
 }

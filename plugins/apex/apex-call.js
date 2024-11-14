@@ -92,15 +92,15 @@ if(document.querySelector("#pieChart")) {
 		  },
 		  series: [24.53, 41.27, 21.27, 14.43, 12.31], // Updated values for each segment
 		  labels: ["Utilities", "Income", "Subscription", "Medical", "Random"], // Updated labels
-		  title: {
-			text: "Distribution of Categories",
-			align: "center",
-			margin: 6,
-			offsetY: 0,
-			style: {
-			  fontSize: "15px",
-			},
-		  },
+		//   title: {
+		// 	text: "Distribution of Categories",
+		// 	align: "center",
+		// 	margin: 6,
+		// 	offsetY: 0,
+		// 	style: {
+		// 	  fontSize: "11px",
+		// 	},
+		//   },
 		//   legend: {
 		// 	position: "bottom",
 		//   },

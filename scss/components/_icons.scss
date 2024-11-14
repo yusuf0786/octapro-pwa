@@ -41,6 +41,12 @@ $icon-xxl-size: 65px; $icon-xxl-font: 17px;
 	margin-top:-3px;
 }
 
+.icon .badge.rounded-circle {
+    padding: 2px 4px 3px 5px;
+    margin-top: -6px;
+    margin-left: -6px;
+}
+
 .icon-xxs{font-size:$icon-xxs-font;	height:$icon-xxs-size; line-height:$icon-xxs-size; width:$icon-xxs-size; transform:translateY(0px)}
 .icon-xs{font-size:$icon-xs-font;	height:$icon-xs-size; line-height:$icon-xs-size; width:$icon-xs-size; transform:translateY(0px)}
 .icon-s{font-size:$icon-s-font;	height:$icon-s-size; line-height:$icon-s-size; width:$icon-s-size; transform:translateY(0px)}

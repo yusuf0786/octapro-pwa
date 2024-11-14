@@ -38,21 +38,21 @@
         <?php require_once("./main-header.php") ?>
 
         <!-- tasks tabs -->
-        <div class="card card-style">
-            <div class="content mb-0">
-                <div class="tabs tabs-pill" id="tab-group-2">
-                    <div class="tab-controls rounded-m p-1 overflow-visible">
-                        <a class="font-13 rounded-s py-1 shadow-bg shadow-bg-s" data-bs-toggle="collapse" href="#tab-4" aria-expanded="true">Current</a>
-                        <a class="font-13 rounded-s py-1 shadow-bg shadow-bg-s" data-bs-toggle="collapse" href="#tab-5" aria-expanded="false">Upcoming</a>
-                    </div>
-                    <div class="mt-3"></div>
+        <div class="card card-style px-0 mx-2">
+            <div class="content mb-0 mx-0">
+                <div class="tabs tabs-borders" id="tab-group-2">
+                    <div class="tab-controls">
+						<a class="font-13" data-bs-toggle="collapse" href="#tab-4" aria-expanded="true">Current</a>
+						<a class="font-13 collapsed" data-bs-toggle="collapse" href="#tab-5" aria-expanded="false">Upcoming</a>
+					</div>
+                    <div class="mt-2"></div>
                     <!-- Tab Current -->
                     <div class="collapse show" id="tab-4" data-bs-parent="#tab-group-2">
 
                         <!-- task card starts here -->
                         <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
 
-                            <div class="card card-style w-100 border">
+                            <div class="card card-style w-100 border mx-2 mb-0">
                                 <div class="content">
 
                                     <div class="d-flex flex-wrap align-items-center">

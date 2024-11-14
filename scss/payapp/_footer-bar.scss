@@ -158,12 +158,15 @@ $footer-dark-background:rgba(0,0,0,0.55);
 
 .footer-bar-detached{
 	border-radius:25px;
-	left:7px!important;
-	right:7px!important;
+	// left:7px!important;
+	// right:7px!important;
+	left: 0px !important;
+	right: 0px !important;
 	bottom:15px!important;
 	box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.1)!important;
 }
-#footer-bar:not(.iosTabBar){bottom:15px!important;}
+// #footer-bar:not(.iosTabBar){bottom:15px!important;}
+#footer-bar:not(.iosTabBar){bottom:0px!important;}
 
 //Dark Style
 .theme-light #footer-bar{background-color:$footer-light-background;}

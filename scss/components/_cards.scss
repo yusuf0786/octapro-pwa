@@ -24,7 +24,7 @@ $shadow-card-style:rgb(0 0 0 / 3%) 0px 20px 25px -5px, rgb(0 0 0 /2%) 0px 10px 1
 .card-style{
 	overflow:hidden;
 	border-radius:$rounded-card-style;
-	margin:0px $globalHalfMargin $globalFullMargin $globalHalfMargin;
+	margin:0px $globalHalfMargin $globalHalfMargin $globalHalfMargin;
 	border:none;
 	box-shadow:$shadow-card-style;
 	background-size:cover;

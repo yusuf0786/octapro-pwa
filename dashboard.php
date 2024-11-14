@@ -21,6 +21,14 @@
 <!-- Daterangepikcer CSS -->
 <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
 
+<style>
+    .form-custom .tasks-date-filter-select {
+        height: auto !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+</style>
+
 <body class="theme-light">
 
 <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
@@ -38,91 +46,87 @@
         <!-- Main header -->
         <?php require_once("./main-header.php") ?>
 
-        <!-- chart -->
-        <div class="card card-style px-0">
-            <div class="form-custom form-label form-border form-icon px-3 pt-1">
-                <i class="bi bi-calendar font-13"></i>
-                <input type="text" name="filter" id="filterByDateRange" class="form-control" placeholder="Select Date">
-                <!-- <select class="form-select rounded-xs" id="c6a">
-                    <option value="0" selected>Current Month</option>
-                    <option value="01">January</option>
-                    <option value="02">February</option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="07">July</option>
-                    <option value="08">August</option>
-                    <option value="09">September</option>
-                    <option value="10">Octomber</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                </select> -->
-            </div>
+        <div class="contianer-fluid mx-2">
             <div class="row">
                 <div class="col-12">
+                    <div class="punch-in-check-out-container rounded-s my-2 d-flex">
+                        <button class="btn bg-green-dark rounded-xl rounded-start w-50 py-1 font-13">
+                            In Time
+                            <span class="d-block">-- : -- --</span>
+                        </button>
+                        <button class="btn bg-red-dark rounded-xl rounded-end w-50 py-1 font-13">
+                            Punch Out
+                            <span class="d-block">-- : -- --</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- chart -->
+        <div class="card card-style px-0 mx-0 rounded-0">
+            <!-- <div class="form-custom form-label form-border form-icon px-3 pt-1">
+                <i class="bi bi-calendar font-13"></i>
+                <input type="text" name="filter" id="filterByDateRange" class="form-control" placeholder="Select Date">
+            </div> -->
+            <div class="row g-0">
+                <div class="col-6">
                     
-                    <div class="pie-chart mx-auto no-click w-100s" id="pieChart" style="width: 65%;"></div>
+                    <h3 class="text-center pt-2 px-1 mb-0">My Tasks</h3>
+                    <div class="pie-chart mx-auto no-click w-100s" id="pieChart" style="width: 100%;"></div>
 
                 </div>
-                <div class="col-12">
+                <div class="col-6">
 
                     <div class="content mt-0 mb-0">
+
+                    <div class="form-custom d-flex align-items-center ">
+                        <label for="c6" class="color-theme form-label-active ps-0">Show: </label>
+                        <select class="form-select rounded-xs tasks-date-filter-select" id="c6" aria-label="Floating label select example"></select>
+                    </div>
         
                         <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_1">
-                            <div class="align-self-center">
-                                <span class="icon rounded-xs me-2 gradient-red shadow-bg shadow-bg-xs"><i class="bi bi-droplet font-18 color-white"></i></span>
+                            <div class="align-self-start">
+                                <span class="icon icon-very-small rounded-xs me-2 gradient-red shadow-bg shadow-bg-xs"><i class="bi bi-droplet font-18 color-white"></i></span>
                             </div>
-                            <div class="align-self-center ps-1">
-                                <h5 class="mb-n1">Utilities</h5>
-                                <!-- <p class="mb-0 font-11 opacity-50">12 Transactions</p> -->
-                            </div>
-                            <div class="align-self-center ms-auto text-end">
+                            <div class="align-self-start ps-1">
+                                <h5 class="mb-n1 text-break">Utilities</h5>
                                 <h4 class="mb-n1 color-red-dark">$1530.41</h4>
-                                <!-- <p class="mb-0 font-12 opacity-50">24.53%</p> -->
                             </div>
                         </a>
                         <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_2">
-                            <div class="align-self-center">
-                                <span class="icon rounded-xs me-2 gradient-green shadow-bg shadow-bg-xs"><i class="bi bi-wallet font-18 color-white"></i></span>
+                            <div class="align-self-start">
+                                <span class="icon icon-very-small rounded-xs me-2 gradient-green shadow-bg shadow-bg-xs"><i class="bi bi-wallet font-18 color-white"></i></span>
                             </div>
-                            <div class="align-self-center ps-1">
-                                <h5 class="mb-n1">Income</h5>
-                            </div>
-                            <div class="align-self-center ms-auto text-end">
+                            <div class="align-self-start ps-1">
+                                <h5 class="mb-n1 text-break">Income</h5>
                                 <h4 class="mb-n1 color-green-dark">$4530.55</h4>
                             </div>
                         </a>
                         <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_3">
-                            <div class="align-self-center">
-                                <span class="icon rounded-xs me-2 gradient-blue shadow-bg shadow-bg-xs"><i class="bi bi-arrow-repeat font-20 color-white"></i></span>
+                            <div class="align-self-start">
+                                <span class="icon icon-very-small rounded-xs me-2 gradient-blue shadow-bg shadow-bg-xs"><i class="bi bi-arrow-repeat font-20 color-white"></i></span>
                             </div>
-                            <div class="align-self-center ps-1">
-                                <h5 class="mb-n1">Subscriptions</h5>
-                            </div>
-                            <div class="align-self-center ms-auto text-end">
+                            <div class="align-self-start ps-1">
+                                <h5 class="mb-n1 text-break">Subscriptions</h5>
                                 <h4 class="mb-n1 color-red-dark">$340.31</h4>
                             </div>
                         </a>
                         <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_4">
-                            <div class="align-self-center">
-                                <span class="icon rounded-xs me-2 gradient-mint shadow-bg shadow-bg-xs"><i class="bi bi-plus font-24 color-white"></i></span>
+                            <div class="align-self-start">
+                                <span class="icon icon-very-small rounded-xs me-2 gradient-mint shadow-bg shadow-bg-xs"><i class="bi bi-plus font-24 color-white"></i></span>
                             </div>
-                            <div class="align-self-center ps-1">
-                                <h5 class="mb-n1">Medical</h5>
-                            </div>
-                            <div class="align-self-center ms-auto text-end">
+                            <div class="align-self-start ps-1">
+                                <h5 class="mb-n1 text-break">Medical</h5>
                                 <h4 class="mb-n1 color-red-dark">$270.31</h4>
                             </div>
                         </a>
                         <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_5">
-                            <div class="align-self-center">
-                                <span class="icon rounded-xs me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-heart font-16 color-white"></i></span>
+                            <div class="align-self-start">
+                                <span class="icon icon-very-small rounded-xs me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-heart font-16 color-white"></i></span>
                             </div>
-                            <div class="align-self-center ps-1">
-                                <h5 class="mb-n1">Random</h5>
-                            </div>
-                            <div class="align-self-center ms-auto text-end">
+                            <div class="align-self-start ps-1">
+                                <h5 class="mb-n1 text-break">Random</h5>
                                 <h4 class="mb-n1 color-red-dark">$480.31</h4>
                             </div>
                         </a>
@@ -137,14 +141,14 @@
         <div class="divider"></div>
 
         <!-- task card starts here -->
-        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
+        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex mb-2">
 
-            <div class="card card-style w-100 border">
+            <div class="card card-style w-100 border mx-2">
                 <div class="content">
 
                     <div class="d-flex flex-wrap align-items-center">
                         <div class="d-flex align-items-start mb-2">
-                            <i class="bi bi-check-circle-fill font-24 color-green-dark me-2"></i>
+                            <i class="bi bi-person-fill font-24 color-green-dark me-2"></i>
                             <h3 class="mb-0">Keyur Joshi</h3>
                         </div>
                         <div class="mb-2 ms-auto">
@@ -152,21 +156,21 @@
                             <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">scheduled</button>
                         </div>
                     </div>
-                    <div class="d-flex align-items-start mb-2">
+                    <div class="d-flex align-items-start mb-1">
                         <div class="me-2">
-                            <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
+                            <i class="bi bi-exclamation-octagon font-24 color-red-light"></i>
                         </div>
                         <p>Problem</p>
                     </div>
-                    <div class="d-flex align-items-start mb-2">
+                    <div class="d-flex align-items-start mb-1">
                         <div class="me-2">
-                            <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
+                            <i class="bi bi-geo-alt-fill font-24 color-yellow-dark"></i>
                         </div>
                         <p>Address</p>
                     </div>
-                    <div class="d-flex align-items-start mb-2">
+                    <div class="d-flex align-items-start mb-1">
                         <div class="me-2">
-                            <i class="bi bi-check-circle-fill font-24 color-green-dark"></i>
+                            <i class="bi bi-calendar-event font-24 color-blue-light"></i>
                         </div>
                         <p>21/03/2023 - 04:00pm</p>
                     </div>
@@ -344,44 +348,73 @@
             break;
         }
         
-        var start = moment().subtract(29, 'days');
-        var end = moment();
+        // var start = moment().subtract(29, 'days');
+        // var end = moment();
     
-        $('#filterByDateRange').daterangepicker({
-            buttonClasses: ' btn',
-            applyClass: 'btn-primary',
-            cancelClass: 'btn-outline-primary text-primary',
+        // $('#filterByDateRange').daterangepicker({
+        //     buttonClasses: ' btn',
+        //     applyClass: 'btn-primary',
+        //     cancelClass: 'btn-outline-primary text-primary',
     
-            startDate: start,
-            endDate: end,
-            ranges: {
-            'Today': [moment(), moment()],
-            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
-            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-            'This Month': [moment().startOf('month'), moment().endOf('month')],
-            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-            },
-            locale: {
-                format: 'DD-MM-YYYY',
-                applyLabel: 'Ok',
-                separator: ' / ',
-                direction: 'rtl',
-            },
-            opens: 'left'
-        }, function(start, end, label) {
-            $('#filterByDateRange').val( start.format('DD-MM-YYYY') + ' / ' + end.format('DD-MM-YYYY'));
+        //     startDate: start,
+        //     endDate: end,
+        //     ranges: {
+        //         'Today': [moment(), moment()],
+        //         'This Week': [moment().startOf('week'), moment()],
+        //         'This Month': [moment().startOf('month'), moment()],
+        //         'This Year': [moment().startOf('year'), moment()],
+        //     },
+        //     locale: {
+        //         format: 'DD-MM-YYYY',
+        //         applyLabel: 'Ok',
+        //         separator: ' / ',
+        //         direction: 'rtl',
+        //     },
+        //     opens: 'left',
+        //     showCustomRangeLabel: false,
+        //     showDropdowns: false,
+        //     linkedCalendars: false,
+        // }, function(start, end, label) {
+        //     $('#filterByDateRange').val( start.format('DD-MM-YYYY') + ' / ' + end.format('DD-MM-YYYY'));
+        // });
+    
+        // // Adjust the dropdown menu width to match the input field width
+        // $('#filterByDateRange').on('show.daterangepicker', function(ev, picker) {
+        //     picker.container.css('width', $(this).outerWidth() + 'px');
+        //     $(picker.container).find('.ranges').css('width', '100%')
+        //     $(picker.container).find('.ranges > ul').css('width', '100%')
+        //     $(picker.container).find('div:not(.ranges)').remove()
+        // });
+
+        let today = moment().format('DD-MM-YYYY');
+        let startOfWeek = moment().startOf('week').format('DD-MM-YYYY');
+        let endOfWeek = moment().endOf('week').format('DD-MM-YYYY');
+        let startOfMonth = moment().startOf('month').format('DD-MM-YYYY');
+        let endOfMonth = moment().endOf('month').format('DD-MM-YYYY');
+        let startOfYear = moment().startOf('year').format('DD-MM-YYYY');
+        let endOfYear = moment().endOf('year').format('DD-MM-YYYY');
+        // Define an array of options
+        var options = [
+            { value: `${today} / ${today}`, text: "Today" },
+            { value: `${startOfWeek} / ${endOfWeek}`, text: "This Week" },
+            { value: `${startOfMonth} / ${endOfMonth}`, text: "This Month" },
+            { value: `${startOfYear} / ${endOfYear}`, text: "This Year" }
+        ];
+        
+        // Loop through the options array and append each option to the select
+        $.each(options, function(index, option) {
+            var newOption = $(`<option value="${option.value}">${option.text}</option>`);
+            $(".tasks-date-filter-select").append(newOption);
         });
+
+        $(".tasks-date-filter-select").on('change', function(){
+            fetchChartsData($(this).val());
+        })
     
-        // Adjust the dropdown menu width to match the input field width
-        $('#filterByDateRange').on('show.daterangepicker', function(ev, picker) {
-            picker.container.css('width', $(this).outerWidth() + 'px');
-        });
-    
-        $('#filterByDateRange').on('apply.daterangepicker', function(ev, picker) {
-            const selectedRange = $(this).val();
-            fetchChartsData(selectedRange);
-        });
+        // $('#filterByDateRange').on('apply.daterangepicker', function(ev, picker) {
+        //     const selectedRange = $(this).val();
+        //     fetchChartsData(selectedRange);
+        // });
     
         async function fetchChartsData(dateParam) {
             try {
@@ -406,7 +439,8 @@
             }
         }
         setTimeout(() => {
-            fetchChartsData($('#filterByDateRange').val());
+            // fetchChartsData($('#filterByDateRange').val());
+            fetchChartsData($(".tasks-date-filter-select").val());
         }, 500);
     })
 </script>
