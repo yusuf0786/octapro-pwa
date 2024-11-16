@@ -12,6 +12,9 @@ body {
     font-style: 11px;
 }
 
+.bg-primary-custom {
+    background-color: $primaryColor !important;
+}
 
 .icon-very-small {
     border-radius: 12px;
@@ -24,4 +27,15 @@ body {
 
 .btn {
     font-size: 11px;
+}
+
+// classes overwrite
+.bg-green-dark {
+    background-color: darken(#8CC152, 5%) !important;
+    color: $white !important;
+}
+
+#punchInButton.btn:disabled {
+    background-color: #fff !important;
+    color: #000 !important;
 }

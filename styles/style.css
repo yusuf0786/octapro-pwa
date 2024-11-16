@@ -1491,6 +1491,7 @@ p {
 .page-title h1 {
   font-size: 18px;
   margin-bottom: -3px;
+  line-height: normal;
 }
 
 .page-title p {
@@ -1603,7 +1604,7 @@ p {
   z-index: 2;
   display: block;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: bold;
   margin-top: -3px;
   opacity: 0.7;
   font-family: "Roboto", sans-serif !important;
@@ -1631,6 +1632,14 @@ p {
 }
 #footer-bar .badge-text {
   padding: 0px 5px;
+}
+
+#footer-bar a.active:not(.btn) i {
+  text-shadow: 0 0 1px #3a57c0;
+  color: #3a57c0;
+}
+#footer-bar a.active:not(.btn) span {
+  color: #3a57c0;
 }
 
 .footer-clear {
@@ -4692,6 +4701,10 @@ body {
   font-style: 11px;
 }
 
+.bg-primary-custom {
+  background-color: #3a57c0 !important;
+}
+
 .icon-very-small {
   border-radius: 12px;
   width: 35px;
@@ -4701,4 +4714,14 @@ body {
 
 .btn {
   font-size: 11px;
+}
+
+.bg-green-dark {
+  background-color: rgb(127.4042553191, 183.6744680851, 65.8255319149) !important;
+  color: #fff !important;
+}
+
+#punchInButton.btn:disabled {
+  background-color: #fff !important;
+  color: #000 !important;
 }

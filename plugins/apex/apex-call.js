@@ -88,10 +88,39 @@ if(document.querySelector("#chart-eur")) {
 if(document.querySelector("#pieChart")) {
     const pieChartOptions = {
         chart: {
+            // width: "240px",
 			type: "pie", // Chart type
 		  },
 		  series: [24.53, 41.27, 21.27, 14.43, 12.31], // Updated values for each segment
-		  labels: ["Utilities", "Income", "Subscription", "Medical", "Random"], // Updated labels
+		  labels: ["PROCESSING", "CLOSED", "PENDING", "CANCEL"], // Updated labels
+          events: {
+            dataPointSelection: function (event, chartContext, config) {
+              console.log("Event triggered:", event, chartContext, config);
+              
+              // Ensure a valid slice is clicked
+              if (config.dataPointIndex !== -1) {
+                const dataIndex = config.dataPointIndex;
+                const label = this.w.config.labels[dataIndex];
+                const value = this.w.config.series[dataIndex];
+                console.log(`You clicked on ${label} with a value of ${value}`);
+                document.getElementById('info').textContent = `Clicked on ${label}: ${value}`;
+              } else {
+                console.log("Clicked outside the slices");
+              }
+            }
+        },
+          colors: ['#FC6E51', '#7fb842', '#5D9CEC', '#d84558'],
+        // dataLabels: {
+        //     enabled: true,
+        //     style: {
+        //       colors: ['#111']
+        //     },
+        //     background: {
+        //       enabled: true,
+        //       foreColor: '#fff',
+        //       borderWidth: 0
+        //     }
+        // },
 		//   title: {
 		// 	text: "Distribution of Categories",
 		// 	align: "center",
@@ -101,17 +130,29 @@ if(document.querySelector("#pieChart")) {
 		// 	  fontSize: "11px",
 		// 	},
 		//   },
-		//   legend: {
-		// 	position: "bottom",
-		//   },
-		  legend: false,
-		  dataLabels: {
-			enabled: false, // Enable data labels
-			formatter: (val, opts) => {
-			  // Return the label instead of the value
-			  return opts.w.globals.labels[opts.seriesIndex];
-			},
+		  legend: {
+			position: "bottom",
 		  },
+		  legend: false,
+              dataLabels: {
+                  enabled: true, // Enable data labels
+                  textAnchor: 'middle',
+                style: {
+                    fontSize: '10px',
+                    colors: ['#111111'],
+                },
+                background: {
+                    enabled: true,
+                    foreColor: '#fff',
+                    borderWidth: 0,
+                    borderRadius: 4,
+                },
+            	formatter: (val, opts) => {
+            	  // Return the label instead of the value
+            	  // return opts.w.globals.labels[opts.seriesIndex];
+            	  return opts.w.globals.initialSeries[opts.seriesIndex];
+            	},
+              },
 		  tooltip: {
 			enabled: false, // Disable the tooltip
 		  },

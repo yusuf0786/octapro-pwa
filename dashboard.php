@@ -27,6 +27,12 @@
         padding-top: 10px !important;
         padding-bottom: 10px !important;
     }
+
+    .legend-color {
+        padding: 0px 8px;
+        border-radius: 100%;
+        margin-right: 5px;
+    }
 </style>
 
 <body class="theme-light">
@@ -46,15 +52,15 @@
         <!-- Main header -->
         <?php require_once("./main-header.php") ?>
 
-        <div class="contianer-fluid mx-2">
+        <div class="contianer-fluid px-2 bg-white">
             <div class="row">
                 <div class="col-12">
                     <div class="punch-in-check-out-container rounded-s my-2 d-flex">
-                        <button class="btn bg-green-dark rounded-xl rounded-start w-50 py-1 font-13">
+                        <button id="punchInButton" class="btn bg-green-dark rounded-xl rounded-start w-50 py-1 font-13 shadow-0">
                             In Time
                             <span class="d-block">-- : -- --</span>
                         </button>
-                        <button class="btn bg-red-dark rounded-xl rounded-end w-50 py-1 font-13">
+                        <button id="punchOutButton" class="btn bg-red-dark rounded-xl rounded-end w-50 py-1 font-13 shadow-0">
                             Punch Out
                             <span class="d-block">-- : -- --</span>
                         </button>
@@ -64,16 +70,13 @@
         </div>
 
         <!-- chart -->
-        <div class="card card-style px-0 mx-0 rounded-0">
-            <!-- <div class="form-custom form-label form-border form-icon px-3 pt-1">
-                <i class="bi bi-calendar font-13"></i>
-                <input type="text" name="filter" id="filterByDateRange" class="form-control" placeholder="Select Date">
-            </div> -->
+        <div class="card card-style px-0 mx-0 rounded-0 shadow-0">
             <div class="row g-0">
                 <div class="col-6">
                     
-                    <h3 class="text-center pt-2 px-1 mb-0">My Tasks</h3>
-                    <div class="pie-chart mx-auto no-click w-100s" id="pieChart" style="width: 100%;"></div>
+                    <h3 class="text-center pt-3 px-2 mb-2">My Tasks</h3>
+                    <div class="pie-chart mx-auto no-clicks w-100s" id="pieChart" style="width: 100%;"></div>
+                    <div id="pieChartLegendsContainer" class="px-3"></div>
 
                 </div>
                 <div class="col-6">
@@ -138,10 +141,80 @@
 
         </div>
 
-        <div class="divider"></div>
+        <!-- <div class="divider"></div> -->
+
+        <div class="contianer-fluid px-2 bg-white">
+            <div class="row pb-2 g-2">
+
+                <div class="col-6">
+                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100">
+                        <div class="card-body pb-0">
+                            <div class="d-flex">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i>
+                                    <h3 class="font-13">My Attendence (<span class="attendence-month">Nov</span>)</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <p class="d-flex justify-content-between align-items-start mb-0 attendence-details"><span>P - 10</span> <span>A - 2</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100">
+                        <div class="card-body pb-0">
+                            <div class="d-flex">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i>
+                                    <h3 class="font-13">Travelled Distance (<span class="travel-month">Nov</span>)</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <p class="d-flex justify-content-between align-items-start mb-0 travel-details"><span>250Kms</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100">
+                        <div class="card-body pb-0">
+                            <div class="d-flex">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i>
+                                    <h3 class="font-13">My Collection</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <p class="d-flex justify-content-between align-items-start mb-0 collection-details"><span>Collect - 10</span> <span>Trans - 2</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100">
+                        <div class="card-body pb-0">
+                            <div class="d-flex">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i>
+                                    <h3 class="font-13">My Expense (<span class="expense-month">Nov</span>)</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <p class="d-flex justify-content-between align-items-start mb-0 expense-details"><span>10,000</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
         <!-- task card starts here -->
-        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex mb-2">
+        <!-- <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex mb-2 ">
 
             <div class="card card-style w-100 border mx-2">
                 <div class="content">
@@ -186,7 +259,8 @@
                 </div>
             </div>
 
-        </a> <!-- task card ends here -->
+        </a>  -->
+        <!-- task card ends here -->
 
     </div>
     <!-- End of Page Content-->
@@ -341,64 +415,54 @@
         let fetchChartsDataApi = ''
         switch (pageOrigin) {
             case 'http://localhost':
-                fetchChartsDataApi = (date) => `${pageOrigin}:3000/api/app/getrcd//tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
+                fetchChartsDataApi = (date) => `${pageOrigin}:3000/api/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
             break;
             case 'https://fielddesk.in':
                 fetchChartsDataApi = (date) => `${pageOrigin}/app/getrcd//tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
             break;
         }
-        
-        // var start = moment().subtract(29, 'days');
-        // var end = moment();
-    
-        // $('#filterByDateRange').daterangepicker({
-        //     buttonClasses: ' btn',
-        //     applyClass: 'btn-primary',
-        //     cancelClass: 'btn-outline-primary text-primary',
-    
-        //     startDate: start,
-        //     endDate: end,
-        //     ranges: {
-        //         'Today': [moment(), moment()],
-        //         'This Week': [moment().startOf('week'), moment()],
-        //         'This Month': [moment().startOf('month'), moment()],
-        //         'This Year': [moment().startOf('year'), moment()],
-        //     },
-        //     locale: {
-        //         format: 'DD-MM-YYYY',
-        //         applyLabel: 'Ok',
-        //         separator: ' / ',
-        //         direction: 'rtl',
-        //     },
-        //     opens: 'left',
-        //     showCustomRangeLabel: false,
-        //     showDropdowns: false,
-        //     linkedCalendars: false,
-        // }, function(start, end, label) {
-        //     $('#filterByDateRange').val( start.format('DD-MM-YYYY') + ' / ' + end.format('DD-MM-YYYY'));
-        // });
-    
-        // // Adjust the dropdown menu width to match the input field width
-        // $('#filterByDateRange').on('show.daterangepicker', function(ev, picker) {
-        //     picker.container.css('width', $(this).outerWidth() + 'px');
-        //     $(picker.container).find('.ranges').css('width', '100%')
-        //     $(picker.container).find('.ranges > ul').css('width', '100%')
-        //     $(picker.container).find('div:not(.ranges)').remove()
-        // });
 
-        let today = moment().format('DD-MM-YYYY');
-        let startOfWeek = moment().startOf('week').format('DD-MM-YYYY');
-        let endOfWeek = moment().endOf('week').format('DD-MM-YYYY');
-        let startOfMonth = moment().startOf('month').format('DD-MM-YYYY');
-        let endOfMonth = moment().endOf('month').format('DD-MM-YYYY');
-        let startOfYear = moment().startOf('year').format('DD-MM-YYYY');
-        let endOfYear = moment().endOf('year').format('DD-MM-YYYY');
+        // localStorage.removeItem('lastPunchInDate')
+        // localStorage.removeItem('lastPunchInTime')
+        const lastPunchInTime = localStorage.getItem('lastPunchInTime');
+        const lastPunchOutTime = localStorage.getItem('lastPunchOutTime');
+        if (lastPunchInTime) {
+            $("#punchInButton > span").text(lastPunchInTime)
+            $('#punchInButton').prop('disabled', true);
+        }
+
+        if (lastPunchOutTime) $("#punchOutButton > span").text(lastPunchOutTime)
+
+        $('#punchInButton').click(function() {
+            const currentDate = moment().format('YYYY-MM-DD');  // Format the current date (year-month-day)
+            const lastPunchInDate = localStorage.getItem('lastPunchInDate');
+
+            // Check if the user has already punched in today
+            if (lastPunchInDate === currentDate) {
+                console.log("You have already punched in today.");
+            } else {
+                // Save the current date to localStorage
+                const time = () => moment().format('h:mm A');
+                localStorage.setItem('lastPunchInDate', currentDate);
+                localStorage.setItem('lastPunchInTime', time());
+                $("#punchInButton > span").text(time())
+                $('#punchInButton').prop('disabled', true);  // Disable Punch In button after it's clicked
+            }
+        });
+
+        $('#punchOutButton').click(function() {
+            const time = () => moment().format('h:mm A');
+            localStorage.setItem('lastPunchOutTime', time());
+            $("#punchOutButton > span").text(time())
+        });
+
+
         // Define an array of options
         var options = [
-            { value: `${today} / ${today}`, text: "Today" },
-            { value: `${startOfWeek} / ${endOfWeek}`, text: "This Week" },
-            { value: `${startOfMonth} / ${endOfMonth}`, text: "This Month" },
-            { value: `${startOfYear} / ${endOfYear}`, text: "This Year" }
+            { value: `${moment().format('DD-MM-YYYY')} / ${moment().format('DD-MM-YYYY')}`, text: "Today" },
+            { value: `${moment().startOf('week').format('DD-MM-YYYY')} / ${moment().endOf('week').format('DD-MM-YYYY')}`, text: "This Week" },
+            { value: `${moment().startOf('month').format('DD-MM-YYYY')} / ${moment().endOf('month').format('DD-MM-YYYY')}`, text: "This Month" },
+            { value: `${moment().startOf('year').format('DD-MM-YYYY')} / ${moment().endOf('year').format('DD-MM-YYYY')}`, text: "This Year" }
         ];
         
         // Loop through the options array and append each option to the select
@@ -408,13 +472,8 @@
         });
 
         $(".tasks-date-filter-select").on('change', function(){
-            fetchChartsData($(this).val());
+            fetchChartsData($(this).val().replace(/\s*\/\s*/, '/'));
         })
-    
-        // $('#filterByDateRange').on('apply.daterangepicker', function(ev, picker) {
-        //     const selectedRange = $(this).val();
-        //     fetchChartsData(selectedRange);
-        // });
     
         async function fetchChartsData(dateParam) {
             try {
@@ -424,23 +483,81 @@
                 const data = await response.json();
                 const ServiceCatgegory = data.ServiceCatgegory
                 const service_type = data.service_type
+                
+                const attendance = data.attendance[0]
+                const travelDistance = data.travelDistance[0]
+                const mycollection = data.mycollection[0]
+                const expense = data.expense[0]
         
-                const newSeries = ServiceCatgegory.map(d => d.service_count)
+                const newSeries = ServiceCatgegory.map(d => parseInt(d.count, 10))
                 const newLabels = ServiceCatgegory.map(d => d.status)
                 window.pieChart.updateSeries(newSeries);
                 window.pieChart.updateOptions({ labels: newLabels });
+
+                // Update custom legends
+                createCustomLegends(window.pieChart);
 
                 service_type.map((d,i) => {
                     $(`#chartDataItem_${i+1}`).find("h5").text(d.name)
                     $(`#chartDataItem_${i+1}`).find("h4").text(d.service_count)
                 })
+
+                $(".attendence-details span:eq(0)").text(`P - ${attendance?.present}`)
+                $(".attendence-details span:eq(1)").text(`P - ${attendance?.absent}`)
+                $(".attendence-month").text(`${attendance?.month.substring(0, 3)}`)
+
+                $(".travel-details span").text(`Unit - ${travelDistance?.km}Kms`)
+                $(".travel-month").text(`${travelDistance?.month.substring(0, 3)}`)
+                
+                $(".collection-details span:eq(0)").text(`Collect - ${mycollection?.Callect}`)
+                $(".collection-details span:eq(1)").text(`Transfer - ${mycollection?.Transfer}`)
+
+                $(".expense-details span").text(`Amount - ${expense?.Amount}`)
+                $(".expense-month").text(`${expense?.month.substring(0, 3)}`)
+
             } catch (error) {
                 console.error(error);
             }
         }
+
+        function createCustomLegends(chart) {
+            const labels = chart.w.globals.labels || [];
+            const series = chart.w.globals.series || [];
+            const colors = chart.w.globals.colors || [];
+            const legendContainer = document.getElementById("pieChartLegendsContainer");
+
+            // Clear existing legends
+            legendContainer.innerHTML = '';
+
+            // Check if labels and series exist
+            if (labels.length === 0 || series.length === 0) {
+                console.warn("No labels or series data available for legends.");
+                return;
+            }
+
+            labels.forEach((label, index) => {
+                const value = series[index];
+                if (value === undefined) return; // Skip undefined values
+
+                const legendItem = document.createElement('div');
+                legendItem.className = 'legend-item';
+                legendItem.innerHTML = `
+                    <span class="legend-color" style="background-color: ${colors[index] || '#000'}"></span>
+                    <span>${label}: ${value}</span>
+                `;
+                legendContainer.appendChild(legendItem);
+
+                // Add click event to toggle series visibility
+                legendItem.addEventListener('click', () => {
+                    if (chart.toggleSeries) {
+                        chart.toggleSeries(label);
+                    }
+                });
+            });
+        }
+        
         setTimeout(() => {
-            // fetchChartsData($('#filterByDateRange').val());
-            fetchChartsData($(".tasks-date-filter-select").val());
+            fetchChartsData($(".tasks-date-filter-select").val().replace(/\s*\/\s*/, '/'));
         }, 500);
     })
 </script>

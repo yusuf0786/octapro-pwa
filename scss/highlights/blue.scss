@@ -6,8 +6,9 @@
 	then simply import as the last css file on page
 */
 
-$colorHighlightLight: #5D9CEC;
-$colorHighlightDark: #4A89DC;
+// $colorHighlightLight: #5D9CEC;
+$colorHighlightLight: #3a57c0;
+$colorHighlightDark: darken($colorHighlightLight, 20%);
 
 .color-highlight{color:$colorHighlightDark!important;}
 .bg-highlight{background-color:$colorHighlightDark!important; color:#FFF!important;}
