@@ -55,13 +55,13 @@
         <div class="contianer-fluid px-2 bg-white">
             <div class="row">
                 <div class="col-12">
-                    <div class="punch-in-check-out-container rounded-s my-2 d-flex">
-                        <button id="punchInButton" class="btn bg-green-dark rounded-xl rounded-start w-50 py-1 font-13 shadow-0">
-                            In Time
+                    <div class="punch-in-check-out-container rounded-s my-2 d-flex rounded-xl ambouse-lg">
+                        <button id="punchInButton" class="btn bg-green-dark border-0 rounded-xl rounded-start w-50 py-1 font-13 shadow-0">
+                            <span>In Time</span>
                             <span class="d-block">-- : -- --</span>
                         </button>
-                        <button id="punchOutButton" class="btn bg-red-dark rounded-xl rounded-end w-50 py-1 font-13 shadow-0">
-                            Punch Out
+                        <button id="punchOutButton" class="btn bg-red-dark border-0 rounded-xl rounded-end w-50 py-1 font-13 shadow-0" disabled>
+                            <span>Punch Out</span>
                             <span class="d-block">-- : -- --</span>
                         </button>
                     </div>
@@ -84,7 +84,7 @@
                     <div class="content mt-0 mb-0">
 
                     <div class="form-custom d-flex align-items-center ">
-                        <label for="c6" class="color-theme form-label-active ps-0">Show: </label>
+                        <label for="c6" class="color-theme form-label-active ps-0 pe-2">Show: </label>
                         <select class="form-select rounded-xs tasks-date-filter-select" id="c6" aria-label="Floating label select example"></select>
                     </div>
         
@@ -147,120 +147,91 @@
             <div class="row pb-2 g-2">
 
                 <div class="col-6">
-                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100">
-                        <div class="card-body pb-0">
+                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100 ambouse">
+                        <div class="card-body p-2 pb-0">
                             <div class="d-flex">
                                 <div class="d-flex align-items-center">
-                                    <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i>
-                                    <h3 class="font-13">My Attendence (<span class="attendence-month">Nov</span>)</h3>
+                                    <!-- <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i> -->
+                                    <h3 class="font-14">Attendence (<span class="attendence-month">Nov</span>)</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer bg-white border-0">
-                            <p class="d-flex justify-content-between align-items-start mb-0 attendence-details"><span>P - 10</span> <span>A - 2</span></p>
+                        <div class="card-footer bg-white border-0 p-2">
+                            <div class="row attendence-details fw-bold">
+                                <div class="col-6 d-flex flex-column color-green-dark">
+                                    <span>Present -</span><span class="attendence-details-present-value font-18">10</span> 
+                                </div>
+                                <div class="col-6 d-flex flex-column color-red-dark">
+                                    <span>Abscent - </span><span class="attendence-details-abscent-value font-18">2</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6">
-                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100">
-                        <div class="card-body pb-0">
+                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100 ambouse">
+                        <div class="card-body p-2 pb-0">
                             <div class="d-flex">
                                 <div class="d-flex align-items-center">
-                                    <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i>
-                                    <h3 class="font-13">Travelled Distance (<span class="travel-month">Nov</span>)</h3>
+                                    <!-- <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i> -->
+                                    <h3 class="font-14">Travelled Distance (<span class="travel-month">Nov</span>)</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer bg-white border-0">
-                            <p class="d-flex justify-content-between align-items-start mb-0 travel-details"><span>250Kms</span></p>
+                        <div class="card-footer bg-white border-0 p-2">
+                            <p class="d-flex mb-0 travel-details fw-bold">
+                                <span class="travel-details-unit ms-1 font-18"> 250</span><span class="font-12" style="margin-top: 2px;">Kms</span>
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6">
-                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100">
-                        <div class="card-body pb-0">
+                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100 ambouse">
+                        <div class="card-body pb-0 p-2">
                             <div class="d-flex">
                                 <div class="d-flex align-items-center">
-                                    <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i>
-                                    <h3 class="font-13">My Collection</h3>
+                                    <!-- <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i> -->
+                                    <h3 class="font-13">Collection</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer bg-white border-0">
-                            <p class="d-flex justify-content-between align-items-start mb-0 collection-details"><span>Collect - 10</span> <span>Trans - 2</span></p>
+                        <div class="card-footer bg-white border-0 p-2">
+                            <div class="row collection-details fw-bold">
+                                <div class="col-6 d-flex flex-column">
+                                    <span>Collect -</span><span class="collection-details-collect font-18">10</span> 
+                                </div>
+                                <div class="col-6 d-flex flex-column">
+                                    <span>Transfer - </span><span class="collection-details-transfer font-18">2</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6">
-                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100">
-                        <div class="card-body pb-0">
+                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100 ambouse">
+                        <div class="card-body p-2 pb-0">
                             <div class="d-flex">
                                 <div class="d-flex align-items-center">
-                                    <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i>
-                                    <h3 class="font-13">My Expense (<span class="expense-month">Nov</span>)</h3>
+                                    <!-- <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i> -->
+                                    <h3 class="font-13">Expense (<span class="expense-month">Nov</span>)</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer bg-white border-0">
-                            <p class="d-flex justify-content-between align-items-start mb-0 expense-details"><span>10,000</span></p>
+                        <div class="card-footer bg-white border-0 p-2">
+                            <div class="row expense-details fw-bold">
+                                <div class="col-6 d-flex flex-column">
+                                    <span>Amount - </span><span class="expense-details-amount font-18">10</span> 
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
-
-        <!-- task card starts here -->
-        <!-- <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex mb-2 ">
-
-            <div class="card card-style w-100 border mx-2">
-                <div class="content">
-
-                    <div class="d-flex flex-wrap align-items-center">
-                        <div class="d-flex align-items-start mb-2">
-                            <i class="bi bi-person-fill font-24 color-green-dark me-2"></i>
-                            <h3 class="mb-0">Keyur Joshi</h3>
-                        </div>
-                        <div class="mb-2 ms-auto">
-                            <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded ms-auto me-2">Repair</button>
-                            <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">scheduled</button>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-start mb-1">
-                        <div class="me-2">
-                            <i class="bi bi-exclamation-octagon font-24 color-red-light"></i>
-                        </div>
-                        <p>Problem</p>
-                    </div>
-                    <div class="d-flex align-items-start mb-1">
-                        <div class="me-2">
-                            <i class="bi bi-geo-alt-fill font-24 color-yellow-dark"></i>
-                        </div>
-                        <p>Address</p>
-                    </div>
-                    <div class="d-flex align-items-start mb-1">
-                        <div class="me-2">
-                            <i class="bi bi-calendar-event font-24 color-blue-light"></i>
-                        </div>
-                        <p>21/03/2023 - 04:00pm</p>
-                    </div>
-                    <div class="d-flex align-items-center border-top pt-2">
-                        <div class="border-end w-50">
-                            <button type="button" class="btn bg-blue-dark shadow-none py-1 px-3 rounded me-2">Accept</button>
-                        </div>
-                        <div class="ps-3 w-50">
-                            <button type="button" class="btn border-blue-dark color-blue-dark shadow-none py-1 px-3 rounded">Reject</button>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-
-        </a>  -->
-        <!-- task card ends here -->
 
     </div>
     <!-- End of Page Content-->
@@ -424,38 +395,37 @@
 
         // localStorage.removeItem('lastPunchInDate')
         // localStorage.removeItem('lastPunchInTime')
+        const lastPunchInDate = localStorage.getItem('lastPunchInDate');
+        const currentDate = moment().format('YYYY-MM-DD');  // Format the current date (year-month-day)
         const lastPunchInTime = localStorage.getItem('lastPunchInTime');
         const lastPunchOutTime = localStorage.getItem('lastPunchOutTime');
-        if (lastPunchInTime) {
-            $("#punchInButton > span").text(lastPunchInTime)
+        if (lastPunchInTime && lastPunchInDate === currentDate) {
+            $("#punchInButton > span:eq(1)").text(lastPunchInTime).parent().addClass("punched")
             $('#punchInButton').prop('disabled', true);
+            $('#punchOutButton').prop('disabled', false);
         }
 
-        if (lastPunchOutTime) $("#punchOutButton > span").text(lastPunchOutTime)
+        if (lastPunchOutTime && lastPunchInDate === currentDate) $("#punchOutButton > span:eq(1)").text(lastPunchOutTime).parent().addClass("punched")
 
         $('#punchInButton').click(function() {
-            const currentDate = moment().format('YYYY-MM-DD');  // Format the current date (year-month-day)
-            const lastPunchInDate = localStorage.getItem('lastPunchInDate');
-
             // Check if the user has already punched in today
             if (lastPunchInDate === currentDate) {
                 console.log("You have already punched in today.");
             } else {
-                // Save the current date to localStorage
                 const time = () => moment().format('h:mm A');
                 localStorage.setItem('lastPunchInDate', currentDate);
                 localStorage.setItem('lastPunchInTime', time());
-                $("#punchInButton > span").text(time())
-                $('#punchInButton').prop('disabled', true);  // Disable Punch In button after it's clicked
+                $("#punchInButton > span:eq(1)").text(time()).parent().addClass("punched")
+                $('#punchInButton').prop('disabled', true);
+                $('#punchOutButton').prop('disabled', false);
             }
         });
 
         $('#punchOutButton').click(function() {
             const time = () => moment().format('h:mm A');
             localStorage.setItem('lastPunchOutTime', time());
-            $("#punchOutButton > span").text(time())
+            $("#punchOutButton > span:eq(1)").text(time()).parent().addClass("punched")
         });
-
 
         // Define an array of options
         var options = [
@@ -494,6 +464,15 @@
                 window.pieChart.updateSeries(newSeries);
                 window.pieChart.updateOptions({ labels: newLabels });
 
+                const chartEvent = {
+                    events: {
+                        dataPointSelection: (event, chartContext, config) => {
+                            console.log("Updated Click:", config.w.config.labels[config.dataPointIndex]);
+                        }
+                    }
+                }
+                window.pieChart.updateOptions({ chart: chartEvent });
+
                 // Update custom legends
                 createCustomLegends(window.pieChart);
 
@@ -502,17 +481,17 @@
                     $(`#chartDataItem_${i+1}`).find("h4").text(d.service_count)
                 })
 
-                $(".attendence-details span:eq(0)").text(`P - ${attendance?.present}`)
-                $(".attendence-details span:eq(1)").text(`P - ${attendance?.absent}`)
+                $(".attendence-details-present-value").text(`${attendance?.present}`)
+                $(".attendence-details-abscent-value").text(`${attendance?.absent}`)
                 $(".attendence-month").text(`${attendance?.month.substring(0, 3)}`)
 
-                $(".travel-details span").text(`Unit - ${travelDistance?.km}Kms`)
+                $(".travel-details-unit").text(`${travelDistance?.km}`)
                 $(".travel-month").text(`${travelDistance?.month.substring(0, 3)}`)
                 
-                $(".collection-details span:eq(0)").text(`Collect - ${mycollection?.Callect}`)
-                $(".collection-details span:eq(1)").text(`Transfer - ${mycollection?.Transfer}`)
+                $(".collection-details-collect").text(`${mycollection?.Callect}`)
+                $(".collection-details-transfer").text(`${mycollection?.Transfer}`)
 
-                $(".expense-details span").text(`Amount - ${expense?.Amount}`)
+                $(".expense-details-amount").text(`${expense?.Amount}`)
                 $(".expense-month").text(`${expense?.month.substring(0, 3)}`)
 
             } catch (error) {
@@ -542,8 +521,8 @@
                 const legendItem = document.createElement('div');
                 legendItem.className = 'legend-item';
                 legendItem.innerHTML = `
-                    <span class="legend-color" style="background-color: ${colors[index] || '#000'}"></span>
-                    <span>${label}: ${value}</span>
+                    <!-- <span class="legend-color"></span> -->
+                    <span style="color: ${colors[index] || '#000'}; font-weight: bold;">${label}: ${value}</span>
                 `;
                 legendContainer.appendChild(legendItem);
 

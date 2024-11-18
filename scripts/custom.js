@@ -897,5 +897,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     init_template();
+
+    // Get the current URL
+	const currentUrl = window.location.pathname;
+
+    // Define the navigation list items
+	let navItems = $('#footer-bar').children().toArray();
+    $(navItems).each((i,d) => $(d).removeClass("active"))
+
+	const pageOrigin = window.location.origin;
+	let pathnameCheckWith = {}
+    switch (pageOrigin) {
+        case 'http://localhost':
+            pathnameCheckWith = {
+				home: '/octapro/',
+				home2: '/octapro-pwa/dashboard.php',
+                tasks: '/octapro-pwa/tasks.php',
+            }
+        break;
+        case 'https://fielddesk.in':
+            pathnameCheckWith = {
+				home: '/app/web/tech-app/',
+				home2: '/app/web/tech-app/dashboard.php',
+                tasks: '/app/web/tech-app/tasks.php',
+            }
+        break;
+    }
+
+	// Switch statement to set active state
+        switch (currentUrl) {
+        case pathnameCheckWith.home:
+            $(navItems[2]).addClass("active")
+            break;
+        case pathnameCheckWith.home2:
+            $(navItems[2]).addClass("active")
+            break;
+        case pathnameCheckWith.tasks:
+            console.log($(navItems[0]));
+            $(navItems[0]).addClass("active")
+            break;
+        default:
+            // Remove active state from all items
+            $(navItems).each((i,d) => {
+                $(d).removeClass("active")
+            })
+            break;
+        }
     
 });

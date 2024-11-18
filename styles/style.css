@@ -1489,7 +1489,7 @@ p {
 }
 
 .page-title h1 {
-  font-size: 18px;
+  font-size: 12px;
   margin-bottom: -3px;
   line-height: normal;
 }
@@ -4699,6 +4699,7 @@ h5 {
 
 body {
   font-style: 11px;
+  font-family: Calibri, "Trebuchet MS", sans-serif;
 }
 
 .bg-primary-custom {
@@ -4716,12 +4717,51 @@ body {
   font-size: 11px;
 }
 
+.height-0 {
+  height: 0 !important;
+}
+
 .bg-green-dark {
   background-color: rgb(127.4042553191, 183.6744680851, 65.8255319149) !important;
   color: #fff !important;
 }
 
-#punchInButton.btn:disabled {
-  background-color: #fff !important;
-  color: #000 !important;
+#punchInButton.btn:disabled,
+#punchOutButton.btn:disabled {
+  background-color: grey !important;
+  color: #fff !important;
+}
+#punchInButton.btn span:first-child,
+#punchOutButton.btn span:first-child {
+  position: relative;
+  top: 10px;
+  transition: top 0.3s;
+}
+#punchInButton.btn span:last-child,
+#punchOutButton.btn span:last-child {
+  opacity: 0;
+}
+
+#punchInButton.btn.punched span:first-child,
+#punchOutButton.btn.punched span:first-child {
+  top: 0px;
+}
+#punchInButton.btn.punched span:last-child,
+#punchOutButton.btn.punched span:last-child {
+  opacity: 1;
+}
+
+div.ambouse {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.125) !important;
+}
+
+div.ambouse-lg {
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.125) !important;
+}
+
+.attendence-details,
+.travel-details,
+.collection-details,
+.expense-details {
+  color: #3a57c0;
 }
