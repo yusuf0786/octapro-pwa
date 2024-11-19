@@ -22,10 +22,10 @@
 <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
 
 <style>
-    .form-custom .tasks-date-filter-select {
+    .form-custom .tasks-date-filter-select,
+    .form-custom .other-details-filter-select {
         height: auto !important;
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
+        padding: 5px !important;
     }
 
     .legend-color {
@@ -52,7 +52,7 @@
         <!-- Main header -->
         <?php require_once("./main-header.php") ?>
 
-        <div class="contianer-fluid px-2 bg-white">
+        <div class="contianer-fluid px-2 bg-white mb-2 rounded-s rounded-top mx-2 mt-2">
             <div class="row">
                 <div class="col-12">
                     <div class="punch-in-check-out-container rounded-s my-2 d-flex rounded-xl ambouse-lg">
@@ -70,11 +70,11 @@
         </div>
 
         <!-- chart -->
-        <div class="card card-style px-0 mx-0 rounded-0 shadow-0">
+        <div class="card card-style px-0 mx-0 rounded-0 shadow-0 mb-4 mx-2 mt-2">
             <div class="row g-0">
                 <div class="col-6">
                     
-                    <h3 class="text-center pt-3 px-2 mb-2">My Tasks</h3>
+                    <h3 class="text-center pt-3 px-2 mb-2">Task Details:</h3>
                     <div class="pie-chart mx-auto no-clicks w-100s" id="pieChart" style="width: 100%;"></div>
                     <div id="pieChartLegendsContainer" class="px-3"></div>
 
@@ -83,56 +83,65 @@
 
                     <div class="content mt-0 mb-0">
 
-                    <div class="form-custom d-flex align-items-center ">
-                        <label for="c6" class="color-theme form-label-active ps-0 pe-2">Show: </label>
-                        <select class="form-select rounded-xs tasks-date-filter-select" id="c6" aria-label="Floating label select example"></select>
-                    </div>
-        
-                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_1">
+                        <div class="form-custom d-flex align-items-center ">
+                            <label for="c6" class="color-theme form-label-active ps-0 pe-2s">Show: </label>
+                            <select class="form-select rounded-xs tasks-date-filter-select" id="c6" aria-label="Floating label select example"></select>
+                        </div>
+
+                        <div class="d-flex pb-3" id="chartDataItem_1">
                             <div class="align-self-start">
-                                <span class="icon icon-very-small rounded-xs me-2 gradient-red shadow-bg shadow-bg-xs"><i class="bi bi-droplet font-18 color-white"></i></span>
+                                <span class="icon icon-very-small rounded-xs me-2 gradient-red shadow-bg shadow-bg-xs"><i class="bi bi-droplet font-16 color-white"></i></span>
                             </div>
-                            <div class="align-self-start ps-1">
-                                <h5 class="mb-n1 text-break">Utilities</h5>
+                            <div class="align-self-start ps-1 d-flex align-self-center">
+                                <h5 class="mb-n1 text-break fw-normal">Utilities</h5>
+                                <span class="mx-1"> - </span>
                                 <h4 class="mb-n1 color-red-dark">$1530.41</h4>
                             </div>
-                        </a>
-                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_2">
+                        </div>
+
+                        <div class="d-flex pb-3" id="chartDataItem_2">
                             <div class="align-self-start">
-                                <span class="icon icon-very-small rounded-xs me-2 gradient-green shadow-bg shadow-bg-xs"><i class="bi bi-wallet font-18 color-white"></i></span>
+                                <span class="icon icon-very-small rounded-xs me-2 gradient-green shadow-bg shadow-bg-xs"><i class="bi bi-wallet font-16 color-white"></i></span>
                             </div>
-                            <div class="align-self-start ps-1">
-                                <h5 class="mb-n1 text-break">Income</h5>
+                            <div class="align-self-start ps-1 d-flex align-self-center">
+                                <h5 class="mb-n1 text-break fw-normal">Income</h5>
+                                <span class="mx-1"> - </span>
                                 <h4 class="mb-n1 color-green-dark">$4530.55</h4>
                             </div>
-                        </a>
-                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_3">
+                        </div>
+
+                        <div class="d-flex pb-3" id="chartDataItem_3">
                             <div class="align-self-start">
-                                <span class="icon icon-very-small rounded-xs me-2 gradient-blue shadow-bg shadow-bg-xs"><i class="bi bi-arrow-repeat font-20 color-white"></i></span>
+                                <span class="icon icon-very-small rounded-xs me-2 gradient-blue shadow-bg shadow-bg-xs"><i class="bi bi-arrow-repeat font-18 color-white"></i></span>
                             </div>
-                            <div class="align-self-start ps-1">
-                                <h5 class="mb-n1 text-break">Subscriptions</h5>
+                            <div class="align-self-start ps-1 d-flex align-self-center">
+                                <h5 class="mb-n1 text-break fw-normal">Subscriptions</h5>
+                                <span class="mx-1"> - </span>
                                 <h4 class="mb-n1 color-red-dark">$340.31</h4>
                             </div>
-                        </a>
-                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_4">
+                        </div>
+
+                        <div class="d-flex pb-3" id="chartDataItem_4">
                             <div class="align-self-start">
-                                <span class="icon icon-very-small rounded-xs me-2 gradient-mint shadow-bg shadow-bg-xs"><i class="bi bi-plus font-24 color-white"></i></span>
+                                <span class="icon icon-very-small rounded-xs me-2 gradient-mint shadow-bg shadow-bg-xs"><i class="bi bi-plus font-20 color-white"></i></span>
                             </div>
-                            <div class="align-self-start ps-1">
-                                <h5 class="mb-n1 text-break">Medical</h5>
+                            <div class="align-self-start ps-1 d-flex align-self-center">
+                                <h5 class="mb-n1 text-break fw-normal">Medical</h5>
+                                <span class="mx-1"> - </span>
                                 <h4 class="mb-n1 color-red-dark">$270.31</h4>
                             </div>
-                        </a>
-                        <a data-bs-toggle="offcanvas" data-bs-target="#menu-activity" href="#" class="d-flex pb-3" id="chartDataItem_5">
+                        </div>
+
+                        <div class="d-flex pb-3" id="chartDataItem_5">
                             <div class="align-self-start">
-                                <span class="icon icon-very-small rounded-xs me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-heart font-16 color-white"></i></span>
+                                <span class="icon icon-very-small rounded-xs me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-heart font-14 color-white"></i></span>
                             </div>
-                            <div class="align-self-start ps-1">
-                                <h5 class="mb-n1 text-break">Random</h5>
+                            <div class="align-self-start ps-1 d-flex align-self-center">
+                                <h5 class="mb-n1 text-break fw-normal">Random</h5>
+                                <span class="mx-1"> - </span>
                                 <h4 class="mb-n1 color-red-dark">$480.31</h4>
                             </div>
-                        </a>
+                        </div>
                         
                     </div>
 
@@ -144,88 +153,81 @@
         <!-- <div class="divider"></div> -->
 
         <div class="contianer-fluid px-2 bg-white">
-            <div class="row pb-2 g-2">
+            <div class="row pb-2 g-3">
+
+                <div class="col-12 m-0 mb-n2">
+
+                    <div class="form-custom d-flex align-items-center">
+                        <label for="otherFilterSelect" class="color-black form-label-active ps-0 w-50 font-16 me-3">Show For: </label>
+                        <select class="form-select rounded-xs color-black font-14 other-details-filter-select w-50" id="otherFilterSelect" aria-label="Floating label select example"></select>
+                    </div>
+
+                </div>
 
                 <div class="col-6">
-                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100 ambouse">
-                        <div class="card-body p-2 pb-0">
-                            <div class="d-flex">
-                                <div class="d-flex align-items-center">
-                                    <!-- <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i> -->
-                                    <h3 class="font-14">Attendence (<span class="attendence-month">Nov</span>)</h3>
+                    <div class="card card-style border-0 shadow-0 rounded-s m-0 h-100 ambouse-primary">
+                        <div class="card-body p-2 px-3">
+                            <div class="row attendence-details fw-bold g-2">
+                                <div class="col-6 d-flex flex-column text-center font-15 color-primary2-custom">
+                                    <span class="attendence-details-present-value font-20 color-green-dark">10</span> <span>Present</span>
+                                </div>
+                                <div class="col-6 d-flex flex-column text-center font-15 color-primary2-custom">
+                                    <span class="attendence-details-abscent-value font-20 color-red-dark">2</span> <span>Abscent</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer bg-white border-0 p-2">
-                            <div class="row attendence-details fw-bold">
-                                <div class="col-6 d-flex flex-column color-green-dark">
-                                    <span>Present -</span><span class="attendence-details-present-value font-18">10</span> 
-                                </div>
-                                <div class="col-6 d-flex flex-column color-red-dark">
-                                    <span>Abscent - </span><span class="attendence-details-abscent-value font-18">2</span>
-                                </div>
-                            </div>
+                        <div class="card-footer bg-primary2-custom text-center border-0 py-1 px-2">
+                            <h3 class="font-14 mb-0 color-white">Attendence</h3>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6">
-                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100 ambouse">
-                        <div class="card-body p-2 pb-0">
-                            <div class="d-flex">
-                                <div class="d-flex align-items-center">
-                                    <!-- <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i> -->
-                                    <h3 class="font-14">Travelled Distance (<span class="travel-month">Nov</span>)</h3>
+                    <div class="card card-style border-0 shadow-0 rounded-s m-0 h-100 ambouse-primary">
+                        <div class="card-body p-2 px-3">
+                            <div class="row attendence-details fw-bold justify-content-center g-2">
+                                <div class="col-6 d-flex flex-column text-center font-15 color-primary2-custom">
+                                    <span class="travel-details-unit font-20 color-blue-dark">000</span> <span>Kms</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer bg-white border-0 p-2">
-                            <p class="d-flex mb-0 travel-details fw-bold">
-                                <span class="travel-details-unit ms-1 font-18"> 250</span><span class="font-12" style="margin-top: 2px;">Kms</span>
-                            </p>
+                        <div class="card-footer bg-primary2-custom text-center border-0 py-1 px-2">
+                            <h3 class="font-14 mb-0 color-white">Travelled Distance</h3>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6">
-                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100 ambouse">
-                        <div class="card-body pb-0 p-2">
-                            <div class="d-flex">
-                                <div class="d-flex align-items-center">
-                                    <!-- <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i> -->
-                                    <h3 class="font-13">Collection</h3>
+                    <div class="card card-style border-0 shadow-0 rounded-s m-0 h-100 ambouse-primary">
+                        <div class="card-body p-2 px-3">
+
+                            <div class="row attendence-details fw-bold g-2">
+                                <div class="col-6 d-flex flex-column text-center font-15 color-primary2-custom">
+                                    <span class="collection-details-collect font-20 color-blue-dark">10</span> <span>Collect</span>
+                                </div>
+                                <div class="col-6 d-flex flex-column text-center font-15 color-primary2-custom">
+                                    <span class="collection-details-transfer font-20 color-blue-dark">2</span> <span>Transfer</span>
                                 </div>
                             </div>
+
                         </div>
-                        <div class="card-footer bg-white border-0 p-2">
-                            <div class="row collection-details fw-bold">
-                                <div class="col-6 d-flex flex-column">
-                                    <span>Collect -</span><span class="collection-details-collect font-18">10</span> 
-                                </div>
-                                <div class="col-6 d-flex flex-column">
-                                    <span>Transfer - </span><span class="collection-details-transfer font-18">2</span>
-                                </div>
-                            </div>
+                        <div class="card-footer bg-primary2-custom text-center border-0 py-1 px-2">
+                            <h3 class="font-14 mb-0 color-white">Collection</h3>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6">
-                    <div class="card card-style border shadow-0 rounded-0 m-0 h-100 ambouse">
-                        <div class="card-body p-2 pb-0">
-                            <div class="d-flex">
-                                <div class="d-flex align-items-center">
-                                    <!-- <i class="bi bi-calendar-week font-16 color-green-dark me-2"></i> -->
-                                    <h3 class="font-13">Expense (<span class="expense-month">Nov</span>)</h3>
+                    <div class="card card-style border-0 shadow-0 rounded-s m-0 h-100 ambouse-primary">
+                        <div class="card-body p-2 px-3">
+                            <div class="row attendence-details fw-bold justify-content-center g-2">
+                                <div class="col-6 d-flex flex-column text-center font-15 color-primary2-custom">
+                                    <span class="expense-details-amount font-20 color-blue-dark">1cr</span> <span>Amount</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer bg-white border-0 p-2">
-                            <div class="row expense-details fw-bold">
-                                <div class="col-6 d-flex flex-column">
-                                    <span>Amount - </span><span class="expense-details-amount font-18">10</span> 
-                                </div>
-                            </div>
+                        <div class="card-footer bg-primary2-custom text-center border-0 py-1 px-2">
+                            <h3 class="font-14 mb-0 color-white">Expense</h3>
                         </div>
                     </div>
                 </div>
@@ -272,103 +274,6 @@
         </div>
     </div>
 
-    <!-- Activity Sidebar Menu -->
-    <div id="menu-activity" class="offcanvas offcanvas-start">
-        <!-- menu-size will be the dimension of your menu. If you set it to smaller than your content it will scroll-->
-        <div class="menu-size" style="width:100vw;"><!-- 100 Viewport Width = 100% -->
-            <div class="d-flex mx-3 mt-3 py-1">
-                <div class="align-self-center">
-                    <span class="icon icon-l gradient-red shadow-bg shadow-bg-xs me-3"><i class="bi bi-droplet color-white"></i></span>
-                </div>
-                <div class="align-self-center">
-                    <h1 class="font-24 mb-0">Utilities</h1>
-                    <h2 class="mt-n1 mb-0 font-13 opacity-50 font-500">$1530.41 - 24.53%</h2>
-                </div>
-                <div class="align-self-center ms-auto">
-                    <a href="#" class="ps-4 shadow-0 me-n2" data-bs-dismiss="offcanvas">
-                        <i class="bi bi-x color-red-dark font-26 line-height-xl"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="divider divider-margins my-3"></div>
-            <div class="content">
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-activity-single" class="d-flex py-1 mb-2">
-                    <div class="align-self-center">
-                        <h5 class="pt-1 mb-n1">Water Bill</h5>
-                        <p class="mb-0 font-11 opacity-70">15th June <span class="copyright-year"></span></p>
-                    </div>
-                    <div class="align-self-center ms-auto text-end">
-                        <h4 class="pt-1 mb-n1">$15.35</h4>
-                        <p class="mb-0 font-11 color-blue-dark opacity-70">Download</p>
-                    </div>
-                </a>
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-activity-single" class="d-flex py-1 mb-2">
-                    <div class="align-self-center">
-                        <h5 class="pt-1 mb-n1">Telephone Bill</h5>
-                        <p class="mb-0 font-11 opacity-70">15th June <span class="copyright-year"></span></p>
-                    </div>
-                    <div class="align-self-center ms-auto text-end">
-                        <h4 class="pt-1 mb-n1">$31.41</h4>
-                        <p class="mb-0 font-11 color-blue-dark opacity-70">Download</p>
-                    </div>
-                </a>
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-activity-single" class="d-flex py-1 mb-2">
-                    <div class="align-self-center">
-                        <h5 class="pt-1 mb-n1">Cloud Storage</h5>
-                        <p class="mb-0 font-11 opacity-70">15th June <span class="copyright-year"></span></p>
-                    </div>
-                    <div class="align-self-center ms-auto text-end">
-                        <h4 class="pt-1 mb-n1">$43.21</h4>
-                        <p class="mb-0 font-11 color-blue-dark opacity-70">Download</p>
-                    </div>
-                </a>
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-activity-single" class="d-flex py-1 mb-2">
-                    <div class="align-self-center">
-                        <h5 class="pt-1 mb-n1">Spotify Music</h5>
-                        <p class="mb-0 font-11 opacity-70">15th June <span class="copyright-year"></span></p>
-                    </div>
-                    <div class="align-self-center ms-auto text-end">
-                        <h4 class="pt-1 mb-n1">$19.21</h4>
-                        <p class="mb-0 font-11 color-blue-dark opacity-70">Download</p>
-                    </div>
-                </a>
-            </div>
-            <a href="#" data-bs-dismiss="offcanvas" class="mx-3 btn btn-full gradient-highlight shadow-bg shadow-bg-s">Back to Activity View</a>
-        </div>
-    </div>    
-    
-    <!-- Activity Sidebar Menu -->
-    <div id="menu-activity-single" class="offcanvas offcanvas-bottom offcanvas-detached rounded-m">
-        <!-- menu-size will be the dimension of your menu. If you set it to smaller than your content it will scroll-->
-        <div class="menu-size" style="height:350px;">
-            
-            <div class="content">
-                <div class="row">
-                    <strong class="col-5 color-theme">Company</strong>
-                    <strong class="col-7 text-end">Water Company Inc</strong>
-                    <div class="col-12 mt-2 mb-2"><div class="divider my-0"></div></div>
-                    <strong class="col-5 color-theme">Invoice Number</strong>
-                    <strong class="col-7 text-end">#INV-123-5166</strong>
-                    <div class="col-12 mt-2 mb-2"><div class="divider my-0"></div></div>
-                    <strong class="col-5 color-theme">Billing Period</strong>
-                    <strong class="col-7 text-end">June <span class="copyright-year"></span></strong>
-                    <div class="col-12 mt-2 mb-2"><div class="divider my-0"></div></div>
-                    <strong class="col-5 color-theme">Invoice Amount</strong>
-                    <strong class="col-7 text-end color-blue-dark">$315.31</strong>
-                    <div class="col-12 mt-2 mb-2"><div class="divider my-0"></div></div>
-                    <strong class="col-5 color-theme">Payment Date</strong>
-                    <strong class="col-7 text-end">15th August</strong>
-                    <div class="col-12 mt-2 mb-2"><div class="divider my-0"></div></div>
-                    <strong class="col-5 color-theme">Payment Via</strong>
-                    <strong class="col-7 text-end">Credit Card</strong>
-                    <div class="col-12 mt-2 mb-2"><div class="divider my-0"></div></div>
-                </div>
-            </div>
-
-            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-activity" class="mx-3 btn btn-full gradient-highlight shadow-bg shadow-bg-s">Back to Category</a>
-        </div>
-    </div>
-
 </div>
 <!-- End of Page ID-->
 
@@ -382,14 +287,19 @@
 <script src="scripts/custom.js"></script>
 <script>
     $(function(){
+        if(preloader){preloader.classList.remove('preloader-hide');}
+
         const pageOrigin = window.location.origin;
         let fetchChartsDataApi = ''
+        let fetchChartsDataByParameter = ''
         switch (pageOrigin) {
             case 'http://localhost':
                 fetchChartsDataApi = (date) => `${pageOrigin}:3000/api/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
+                fetchChartsDataByParameter = (date, parameter) => `${pageOrigin}:3000/api/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}&service_status=${parameter}`
             break;
             case 'https://fielddesk.in':
-                fetchChartsDataApi = (date) => `${pageOrigin}/app/getrcd//tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
+                fetchChartsDataApi = (date) => `${pageOrigin}/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
+                fetchChartsDataByParameter = (date, parameter) => `${pageOrigin}/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}&service_status=${parameter}`
             break;
         }
 
@@ -427,7 +337,7 @@
             $("#punchOutButton > span:eq(1)").text(time()).parent().addClass("punched")
         });
 
-        // Define an array of options
+        // tasks select options append starts here
         var options = [
             { value: `${moment().format('DD-MM-YYYY')} / ${moment().format('DD-MM-YYYY')}`, text: "Today" },
             { value: `${moment().startOf('week').format('DD-MM-YYYY')} / ${moment().endOf('week').format('DD-MM-YYYY')}`, text: "This Week" },
@@ -444,6 +354,25 @@
         $(".tasks-date-filter-select").on('change', function(){
             fetchChartsData($(this).val().replace(/\s*\/\s*/, '/'));
         })
+        // tasks select options append ends here
+
+        // other details select options append starts here
+        var options = [
+            { value: ` `, text: "Please Select" },
+            { value: `${moment().format('MM')} / ${moment().format('MM')}`, text: "Current Month" },
+        ];
+        
+        // Loop through the options array and append each option to the select
+        $.each(options, function(index, option) {
+            var newOption = $(`<option value="${option.value}">${option.text}</option>`);
+            $(".other-details-filter-select").append(newOption);
+        });
+
+        $(".other-details-filter-select").on('change', function(){
+            console.log($(this).val());
+            // fetchChartsData($(this).val().replace(/\s*\/\s*/, '/'));
+        })
+        // other details select options append ends here
     
         async function fetchChartsData(dateParam) {
             try {
@@ -466,8 +395,22 @@
 
                 const chartEvent = {
                     events: {
-                        dataPointSelection: (event, chartContext, config) => {
-                            console.log("Updated Click:", config.w.config.labels[config.dataPointIndex]);
+                        dataPointSelection: async (event, chartContext, config) => {
+                            try {
+
+                                const currentLabel = config.w.config.labels[config.dataPointIndex]
+                                const response = await fetch(fetchChartsDataByParameter($(".tasks-date-filter-select").val().replace(/\s*\/\s*/, '/'), currentLabel))
+                                const json = await response.json()
+                                const service_type = json.service_type
+
+                                service_type.map((d,i) => {
+                                    $(`#chartDataItem_${i+1}`).find("h5").text(d.name)
+                                    $(`#chartDataItem_${i+1}`).find("h4").text(d.service_count)
+                                })
+                                
+                            } catch (error) {
+                                console.error(error);
+                            }
                         }
                     }
                 }
@@ -483,16 +426,16 @@
 
                 $(".attendence-details-present-value").text(`${attendance?.present}`)
                 $(".attendence-details-abscent-value").text(`${attendance?.absent}`)
-                $(".attendence-month").text(`${attendance?.month.substring(0, 3)}`)
+                // $(".attendence-month").text(`${attendance?.month.substring(0, 3)}`)
 
                 $(".travel-details-unit").text(`${travelDistance?.km}`)
-                $(".travel-month").text(`${travelDistance?.month.substring(0, 3)}`)
+                // $(".travel-month").text(`${travelDistance?.month.substring(0, 3)}`)
                 
                 $(".collection-details-collect").text(`${mycollection?.Callect}`)
                 $(".collection-details-transfer").text(`${mycollection?.Transfer}`)
 
                 $(".expense-details-amount").text(`${expense?.Amount}`)
-                $(".expense-month").text(`${expense?.month.substring(0, 3)}`)
+                // $(".expense-month").text(`${expense?.month.substring(0, 3)}`)
 
             } catch (error) {
                 console.error(error);
@@ -519,7 +462,7 @@
                 if (value === undefined) return; // Skip undefined values
 
                 const legendItem = document.createElement('div');
-                legendItem.className = 'legend-item';
+                legendItem.className = 'legend-item font-15';
                 legendItem.innerHTML = `
                     <!-- <span class="legend-color"></span> -->
                     <span style="color: ${colors[index] || '#000'}; font-weight: bold;">${label}: ${value}</span>
@@ -538,6 +481,8 @@
         setTimeout(() => {
             fetchChartsData($(".tasks-date-filter-select").val().replace(/\s*\/\s*/, '/'));
         }, 500);
+
+        if(preloader){preloader.classList.add('preloader-hide');}
     })
 </script>
 </body>
