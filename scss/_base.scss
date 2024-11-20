@@ -11,6 +11,7 @@ h5 {
 body {
     font-style: 11px;
     font-family: Calibri, 'Trebuchet MS', sans-serif;
+    background-color: $primaryColor !important;
 }
 body * {
     font-family: Calibri, 'Trebuchet MS', sans-serif !important;
@@ -21,6 +22,10 @@ body * {
 }
 .bg-primary2-custom {
     background-color: $primary2Color !important;
+}
+
+.color-primary-custom {
+    color: $primaryColor !important;
 }
 
 .color-primary2-custom {

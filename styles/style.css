@@ -4700,6 +4700,7 @@ h5 {
 body {
   font-style: 11px;
   font-family: Calibri, "Trebuchet MS", sans-serif;
+  background-color: #3a57c0 !important;
 }
 
 body * {
@@ -4712,6 +4713,10 @@ body * {
 
 .bg-primary2-custom {
   background-color: #232583 !important;
+}
+
+.color-primary-custom {
+  color: #3a57c0 !important;
 }
 
 .color-primary2-custom {

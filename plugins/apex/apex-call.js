@@ -95,6 +95,11 @@ if(document.querySelector("#pieChart")) {
             //     // this will print mango, apple etc. when clicked on respective datapoint
             //     console.log(config.w.config.labels[config.dataPointIndex])}
             // }
+            animations: {
+                enabled: false,
+                easing: 'easeinout',
+                speed: 500
+            },
         },
         stroke: {
             width: 1,
@@ -117,7 +122,7 @@ if(document.querySelector("#pieChart")) {
             textAnchor: 'middle',
             style: {
                 fontSize: '10px',
-                colors: ['rgba(0,0,0,0)'],
+                colors: ['#00000000'],
             },
             background: {
                 enabled: true,

@@ -23,7 +23,8 @@
 
 <style>
     .form-custom .tasks-date-filter-select,
-    .form-custom .other-details-filter-select {
+    .form-custom .other-details-filter-select,
+    .form-custom .revenue-filter-select {
         height: auto !important;
         padding: 5px !important;
     }
@@ -32,6 +33,14 @@
         padding: 0px 8px;
         border-radius: 100%;
         margin-right: 5px;
+    }
+    .legend-item {
+        display: inline-block;
+        margin-right: 8px;
+        font-size: 12px !important;
+    }
+    .legend-item:last-child {
+        margin-right: 0;
     }
 </style>
 
@@ -52,7 +61,8 @@
         <!-- Main header -->
         <?php require_once("./main-header.php") ?>
 
-        <div class="contianer-fluid px-2 bg-white mb-2 rounded-s rounded-top mx-2 mt-2">
+        <!-- punch in/punch out section -->
+        <div class="contianer-fluid px-2 bg-white rounded-s rounded-top mx-2">
             <div class="row">
                 <div class="col-12">
                     <div class="punch-in-check-out-container rounded-s my-2 d-flex rounded-xl ambouse-lg">
@@ -69,8 +79,8 @@
             </div>
         </div>
 
-        <!-- chart -->
-        <div class="card card-style px-0 mx-0 rounded-0 shadow-0 mb-4 mx-2 mt-2">
+        <!-- chart section -->
+        <div class="card card-style px-0 mx-0 rounded-s rounded-bottom shadow-0 mb-2 mx-2">
             <div class="row g-0">
                 <div class="col-6">
                     
@@ -150,9 +160,57 @@
 
         </div>
 
-        <!-- <div class="divider"></div> -->
+        <!-- open jobs section -->
+        <div class="contianer-fluid mx-2 mb-4">
+            <div class="row g-3 pb-3">
+                <h3 class="color-white fw-normal mb-2">Open Jobs :</h3>
+                <div class="col-4 mt-0">
+                    <div class="card card-style border-0 shadow-0 rounded m-0 h-100 ambouse-primary">
+                        <div class="card-body pt-2 pb-0">
+                            <p class="text-center font-15 color-primary-custom mb-3">
+                                <span class="icon icon-very-small rounded-xs bg-primary-custom"><i class="bi bi-arrow-clockwise font-14 color-white"></i></span>
+                            </p>
+                            <p class="text-center font-32 fw-bold color-primary-custom mb-0 open-jobs-current-task-value">01</p>
+                        </div>
+                        <div class="card-footer bg-white text-center border-0 py-1 px-2">
+                            <h3 class="font-14 mb-0 color-primary2-custom">Current Task</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-4 mt-0">
+                    <div class="card card-style border-0 shadow-0 rounded m-0 h-100 ambouse-primary">
+                        <div class="card-body pt-2 pb-0">
+                            <p class="text-center font-15 color-green-light mb-3">
+                                <span class="icon icon-very-small rounded-xs bg-green-light"><i class="bi bi-arrow-clockwise font-14 color-white"></i></span>
+                            </p>
+                            <p class="text-center font-32 fw-bold color-green-light mb-0 open-jobs-overdue-task-value">01</p>
+                        </div>
+                        <div class="card-footer bg-white text-center border-0 py-1 px-2">
+                            <h3 class="font-14 mb-0 color-primary2-custom">Overdue Task</h3>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="contianer-fluid px-2 bg-white">
+                <div class="col-4 mt-0">
+                    <div class="card card-style border-0 shadow-0 rounded m-0 h-100 ambouse-primary">
+                        <div class="card-body pt-2 pb-0">
+                            <p class="text-center font-15 color-blue-dark mb-3">
+                                <span class="icon icon-very-small rounded-xs bg-blue-dark"><i class="bi bi-arrow-clockwise font-14 color-white"></i></span>
+                            </p>
+                            <p class="text-center font-32 fw-bold color-blue-dark mb-0 open-jobs-upcoming-task-value">01</p>
+                        </div>
+                        <div class="card-footer bg-white text-center border-0 py-1 px-2">
+                            <h3 class="font-14 mb-0 color-primary2-custom">Upcoming Task</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- other details section -->
+        <div class="contianer-fluid px-2 bg-white rounded-s mx-2 mb-4">
             <div class="row pb-2 g-3">
 
                 <div class="col-12 m-0 mb-n2">
@@ -235,6 +293,52 @@
             </div>
         </div>
 
+        <!-- revenue section -->
+        <div class="contianer-fluid px-2 bg-white rounded-s mx-2">
+            <div class="row pb-2 g-3">
+
+                <div class="col-12 m-0 mb-n2">
+
+                    <div class="form-custom d-flex align-items-center">
+                        <label for="otherFilterSelect" class="color-black form-label-active ps-0 w-50 font-16 me-3">Revenue by me: </label>
+                        <select class="form-select rounded-xs color-black font-14 revenue-filter-select w-50" id="revenueFilterSelect" aria-label="reventue select label"></select>
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+                    <div class="card card-style border-0 shadow-0 rounded-s m-0 h-100 ambouse-primary">
+                        <div class="card-body p-3 px-3 bg-primary2-custom">
+                            <div class="row attendence-details fw-bold justify-content-center g-2">
+                                <div class="col-12 d-flex flex-column text-center font-15 color-white">
+                                    <span class="service-amount font-20">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center border-0 py-1 px-2">
+                            <h3 class="font-14 mb-0 color-primary2-custom">Service Amount</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="card card-style border-0 shadow-0 rounded-s m-0 h-100 ambouse-primary">
+                        <div class="card-body p-3 px-3 bg-primary2-custom">
+                            <div class="row attendence-details fw-bold justify-content-center g-2">
+                                <div class="col-12 d-flex flex-column text-center font-15 color-white">
+                                    <span class="parts-amount font-20">0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center border-0 py-1 px-2">
+                            <h3 class="font-14 mb-0 color-primary2-custom">Parts Amount</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
     <!-- End of Page Content-->
 
@@ -290,16 +394,16 @@
         if(preloader){preloader.classList.remove('preloader-hide');}
 
         const pageOrigin = window.location.origin;
-        let fetchChartsDataApi = ''
+        // let fetchChartsDataApi = ''
         let fetchChartsDataByParameter = ''
         switch (pageOrigin) {
             case 'http://localhost':
-                fetchChartsDataApi = (date) => `${pageOrigin}:3000/api/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
-                fetchChartsDataByParameter = (date, parameter) => `${pageOrigin}:3000/api/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}&service_status=${parameter}`
+                // fetchChartsDataApi = (date) => `${pageOrigin}:3000/api/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
+                fetchChartsDataByParameter = (date, paramServiceType = '', paramTechDetails = '', paramRevenue = '') => `${pageOrigin}:3000/api/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}&service_status=${paramServiceType}&techdetail_filter=${paramTechDetails}&revenue_filter=${paramRevenue}`
             break;
             case 'https://fielddesk.in':
-                fetchChartsDataApi = (date) => `${pageOrigin}/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
-                fetchChartsDataByParameter = (date, parameter) => `${pageOrigin}/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}&service_status=${parameter}`
+                // fetchChartsDataApi = (date) => `${pageOrigin}/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
+                fetchChartsDataByParameter = (date, paramServiceType = '', paramTechDetails = '', paramRevenue = '') => `${pageOrigin}/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}&service_status=${parameter}`
             break;
         }
 
@@ -369,16 +473,32 @@
         });
 
         $(".other-details-filter-select").on('change', function(){
-            console.log($(this).val());
-            // fetchChartsData($(this).val().replace(/\s*\/\s*/, '/'));
+            fetchOtherDetailsData($(".tasks-date-filter-select").val(), $(this).val())
         })
         // other details select options append ends here
+
+        // revenue select options append starts here
+        var options = [
+            { value: ` `, text: "Please Select" },
+            { value: `${moment().format('MM')} / ${moment().format('MM')}`, text: "This Week" },
+        ];
+        
+        // Loop through the options array and append each option to the select
+        $.each(options, function(index, option) {
+            var newOption = $(`<option value="${option.value}">${option.text}</option>`);
+            $(".revenue-filter-select").append(newOption);
+        });
+
+        $(".revenue-filter-select").on('change', function(){
+            fetchRevenueData($(".tasks-date-filter-select").val(), $(this).val())
+        })
+        // revenue select options append ends here
     
         async function fetchChartsData(dateParam) {
             try {
                 const date = dateParam.replace(/\s*\/\s*/, '/')
                 
-                const response = await fetch(fetchChartsDataApi(date));
+                const response = await fetch(fetchChartsDataByParameter(date));
                 const data = await response.json();
                 const ServiceCatgegory = data.ServiceCatgegory
                 const service_type = data.service_type
@@ -387,55 +507,54 @@
                 const travelDistance = data.travelDistance[0]
                 const mycollection = data.mycollection[0]
                 const expense = data.expense[0]
+
+                const open_jobs = data.open_jobs[0]
+                const revenue = data.revenue[0]
         
                 const newSeries = ServiceCatgegory.map(d => parseInt(d.count, 10))
                 const newLabels = ServiceCatgegory.map(d => d.status)
-                window.pieChart.updateSeries(newSeries);
-                window.pieChart.updateOptions({ labels: newLabels });
+                chartUpdateFunc({newSeries, newLabels, service_type})
 
-                const chartEvent = {
-                    events: {
-                        dataPointSelection: async (event, chartContext, config) => {
-                            try {
+                openJobsFetchFunc(open_jobs)
 
-                                const currentLabel = config.w.config.labels[config.dataPointIndex]
-                                const response = await fetch(fetchChartsDataByParameter($(".tasks-date-filter-select").val().replace(/\s*\/\s*/, '/'), currentLabel))
-                                const json = await response.json()
-                                const service_type = json.service_type
+                otherDetailsFetchFunc({attendance, travelDistance, mycollection, expense})
 
-                                service_type.map((d,i) => {
-                                    $(`#chartDataItem_${i+1}`).find("h5").text(d.name)
-                                    $(`#chartDataItem_${i+1}`).find("h4").text(d.service_count)
-                                })
-                                
-                            } catch (error) {
-                                console.error(error);
-                            }
-                        }
-                    }
-                }
-                window.pieChart.updateOptions({ chart: chartEvent });
+                revenueFetchFunc(revenue)
 
-                // Update custom legends
-                createCustomLegends(window.pieChart);
+            } catch (error) {
+                console.error(error);
+            }
+        }
 
-                service_type.map((d,i) => {
-                    $(`#chartDataItem_${i+1}`).find("h5").text(d.name)
-                    $(`#chartDataItem_${i+1}`).find("h4").text(d.service_count)
-                })
-
-                $(".attendence-details-present-value").text(`${attendance?.present}`)
-                $(".attendence-details-abscent-value").text(`${attendance?.absent}`)
-                // $(".attendence-month").text(`${attendance?.month.substring(0, 3)}`)
-
-                $(".travel-details-unit").text(`${travelDistance?.km}`)
-                // $(".travel-month").text(`${travelDistance?.month.substring(0, 3)}`)
+        async function fetchOtherDetailsData(dateParam, value) {
+            try {
+                const date = dateParam.replace(/\s*\/\s*/, '/')
                 
-                $(".collection-details-collect").text(`${mycollection?.Callect}`)
-                $(".collection-details-transfer").text(`${mycollection?.Transfer}`)
+                const response = await fetch(fetchChartsDataByParameter(date, '', value));
+                const data = await response.json();
+                
+                const attendance = data.attendance[0]
+                const travelDistance = data.travelDistance[0]
+                const mycollection = data.mycollection[0]
+                const expense = data.expense[0]
 
-                $(".expense-details-amount").text(`${expense?.Amount}`)
-                // $(".expense-month").text(`${expense?.month.substring(0, 3)}`)
+                otherDetailsFetchFunc({attendance, travelDistance, mycollection, expense})
+
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        async function fetchRevenueData(dateParam, value) {
+            try {
+                const date = dateParam.replace(/\s*\/\s*/, '/')
+                
+                const response = await fetch(fetchChartsDataByParameter(date, '', '', value));
+                const data = await response.json();
+                const ServiceCatgegory = data.ServiceCatgegory
+
+                const revenue = data.revenue[0]
+                revenueFetchFunc(revenue)
 
             } catch (error) {
                 console.error(error);
@@ -476,6 +595,68 @@
                     }
                 });
             });
+        }
+
+        function chartUpdateFunc({newSeries, newLabels, service_type}) {
+            window.pieChart.updateSeries(newSeries);
+            window.pieChart.updateOptions({ labels: newLabels });
+
+            const chartEvent = {
+                events: {
+                    dataPointSelection: async (event, chartContext, config) => {
+                        try {
+
+                            const currentLabel = config.w.config.labels[config.dataPointIndex]
+                            const response = await fetch(fetchChartsDataByParameter($(".tasks-date-filter-select").val().replace(/\s*\/\s*/, '/'), currentLabel))
+                            const json = await response.json()
+                            const service_type = json.service_type
+
+                            service_type.map((d,i) => {
+                                $(`#chartDataItem_${i+1}`).find("h5").text(d.name)
+                                $(`#chartDataItem_${i+1}`).find("h4").text(d.service_count)
+                            })
+                            
+                        } catch (error) {
+                            console.error(error);
+                        }
+                    }
+                }
+            }
+            window.pieChart.updateOptions({ chart: chartEvent });
+
+            // Update custom legends
+            createCustomLegends(window.pieChart);
+
+            service_type.map((d,i) => {
+                $(`#chartDataItem_${i+1}`).find("h5").text(d.name)
+                $(`#chartDataItem_${i+1}`).find("h4").text(d.service_count)
+            })
+        }
+
+        function openJobsFetchFunc(open_jobs) {
+            $(".open-jobs-current-task-value").text(parseFloat(open_jobs['Current Task']))
+            $(".open-jobs-overdue-task-value").text(parseFloat(open_jobs['Overdue Task']))
+            $(".open-jobs-upcoming-task-value").text(parseFloat(open_jobs['Upcomming Task']))
+        }
+
+        function otherDetailsFetchFunc({attendance, travelDistance, mycollection, expense}) {
+            $(".attendence-details-present-value").text(`${attendance?.present}`)
+            $(".attendence-details-abscent-value").text(`${attendance?.absent}`)
+            // $(".attendence-month").text(`${attendance?.month.substring(0, 3)}`)
+
+            $(".travel-details-unit").text(`${travelDistance?.km}`)
+            // $(".travel-month").text(`${travelDistance?.month.substring(0, 3)}`)
+            
+            $(".collection-details-collect").text(`${mycollection?.Callect}`)
+            $(".collection-details-transfer").text(`${mycollection?.Transfer}`)
+
+            $(".expense-details-amount").text(`${expense?.Amount}`)
+            // $(".expense-month").text(`${expense?.month.substring(0, 3)}`)
+        }
+
+        function revenueFetchFunc(revenue) {
+            $(".service-amount").text(parseFloat(revenue['Service Amount']))
+            $(".parts-amount").text(parseFloat(revenue['Parts Amount']))
         }
         
         setTimeout(() => {
