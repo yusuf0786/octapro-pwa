@@ -29,18 +29,21 @@
         padding: 5px !important;
     }
 
-    .legend-color {
+    /* .legend-color {
         padding: 0px 8px;
         border-radius: 100%;
         margin-right: 5px;
+    } */
+
+    .legend-item > span:first-child  {
+        min-width: 58px;
     }
-    .legend-item {
-        display: inline-block;
-        margin-right: 8px;
-        font-size: 12px !important;
+    .legend-item > span:nth-child(2),
+    .legend-item > span:nth-child(3)  {
+        justify-self: flex-end;
     }
-    .legend-item:last-child {
-        margin-right: 0;
+    .legend-item > span:nth-child(3) {
+        margin-left: 5px;
     }
 </style>
 
@@ -52,7 +55,7 @@
 <!-- Page Wrapper-->
 <div id="page">
 
-    <!-- loader -->
+    <!-- footer bar -->
     <?php require_once("./components/footer-bar.php") ?>
 
     <!-- Page Content - Only Page Elements Here-->
@@ -86,7 +89,7 @@
                     
                     <h3 class="text-center pt-3 px-2 mb-2">Task Details:</h3>
                     <div class="pie-chart mx-auto no-clicks w-100s" id="pieChart" style="width: 100%;"></div>
-                    <div id="pieChartLegendsContainer" class="px-3"></div>
+                    <div id="pieChartLegendsContainer" class="row g-2 ps-3 pe-0"></div>
 
                 </div>
                 <div class="col-6">
@@ -103,9 +106,9 @@
                                 <span class="icon icon-very-small rounded-xs me-2 gradient-red shadow-bg shadow-bg-xs"><i class="bi bi-droplet font-16 color-white"></i></span>
                             </div>
                             <div class="align-self-start ps-1 d-flex align-self-center">
-                                <h5 class="mb-n1 text-break fw-normal">Utilities</h5>
+                                <h5 class="mb-n1 text-break fw-normal"></h5>
                                 <span class="mx-1"> - </span>
-                                <h4 class="mb-n1 color-red-dark">$1530.41</h4>
+                                <h4 class="mb-n1 color-red-dark"></h4>
                             </div>
                         </div>
 
@@ -114,9 +117,9 @@
                                 <span class="icon icon-very-small rounded-xs me-2 gradient-green shadow-bg shadow-bg-xs"><i class="bi bi-wallet font-16 color-white"></i></span>
                             </div>
                             <div class="align-self-start ps-1 d-flex align-self-center">
-                                <h5 class="mb-n1 text-break fw-normal">Income</h5>
+                                <h5 class="mb-n1 text-break fw-normal"></h5>
                                 <span class="mx-1"> - </span>
-                                <h4 class="mb-n1 color-green-dark">$4530.55</h4>
+                                <h4 class="mb-n1 color-green-dark"></h4>
                             </div>
                         </div>
 
@@ -125,9 +128,9 @@
                                 <span class="icon icon-very-small rounded-xs me-2 gradient-blue shadow-bg shadow-bg-xs"><i class="bi bi-arrow-repeat font-18 color-white"></i></span>
                             </div>
                             <div class="align-self-start ps-1 d-flex align-self-center">
-                                <h5 class="mb-n1 text-break fw-normal">Subscriptions</h5>
+                                <h5 class="mb-n1 text-break fw-normal"></h5>
                                 <span class="mx-1"> - </span>
-                                <h4 class="mb-n1 color-red-dark">$340.31</h4>
+                                <h4 class="mb-n1 color-red-dark"></h4>
                             </div>
                         </div>
 
@@ -136,9 +139,9 @@
                                 <span class="icon icon-very-small rounded-xs me-2 gradient-mint shadow-bg shadow-bg-xs"><i class="bi bi-plus font-20 color-white"></i></span>
                             </div>
                             <div class="align-self-start ps-1 d-flex align-self-center">
-                                <h5 class="mb-n1 text-break fw-normal">Medical</h5>
+                                <h5 class="mb-n1 text-break fw-normal"></h5>
                                 <span class="mx-1"> - </span>
-                                <h4 class="mb-n1 color-red-dark">$270.31</h4>
+                                <h4 class="mb-n1 color-red-dark"></h4>
                             </div>
                         </div>
 
@@ -147,9 +150,9 @@
                                 <span class="icon icon-very-small rounded-xs me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-heart font-14 color-white"></i></span>
                             </div>
                             <div class="align-self-start ps-1 d-flex align-self-center">
-                                <h5 class="mb-n1 text-break fw-normal">Random</h5>
+                                <h5 class="mb-n1 text-break fw-normal"></h5>
                                 <span class="mx-1"> - </span>
-                                <h4 class="mb-n1 color-red-dark">$480.31</h4>
+                                <h4 class="mb-n1 color-red-dark"></h4>
                             </div>
                         </div>
                         
@@ -168,11 +171,11 @@
                     <div class="card card-style border-0 shadow-0 rounded m-0 h-100 ambouse-primary">
                         <div class="card-body pt-2 pb-0">
                             <p class="text-center font-15 color-primary-custom mb-3">
-                                <span class="icon icon-very-small rounded-xs bg-primary-custom"><i class="bi bi-arrow-clockwise font-14 color-white"></i></span>
+                                <span class="icon icon-very-small rounded-xs bg-primary-custom"><i class="bi bi-list-task font-14 color-white"></i></span>
                             </p>
                             <p class="text-center font-32 fw-bold color-primary-custom mb-0 open-jobs-current-task-value">01</p>
                         </div>
-                        <div class="card-footer bg-white text-center border-0 py-1 px-2">
+                        <div class="card-footer bg-white text-center border-0 py-1 px-1">
                             <h3 class="font-14 mb-0 color-primary2-custom">Current Task</h3>
                         </div>
                     </div>
@@ -182,11 +185,11 @@
                     <div class="card card-style border-0 shadow-0 rounded m-0 h-100 ambouse-primary">
                         <div class="card-body pt-2 pb-0">
                             <p class="text-center font-15 color-green-light mb-3">
-                                <span class="icon icon-very-small rounded-xs bg-green-light"><i class="bi bi-arrow-clockwise font-14 color-white"></i></span>
+                                <span class="icon icon-very-small rounded-xs bg-green-light"><i class="bi bi-clock font-14 color-white"></i></span>
                             </p>
                             <p class="text-center font-32 fw-bold color-green-light mb-0 open-jobs-overdue-task-value">01</p>
                         </div>
-                        <div class="card-footer bg-white text-center border-0 py-1 px-2">
+                        <div class="card-footer bg-white text-center border-0 py-1 px-1">
                             <h3 class="font-14 mb-0 color-primary2-custom">Overdue Task</h3>
                         </div>
                     </div>
@@ -196,11 +199,11 @@
                     <div class="card card-style border-0 shadow-0 rounded m-0 h-100 ambouse-primary">
                         <div class="card-body pt-2 pb-0">
                             <p class="text-center font-15 color-blue-dark mb-3">
-                                <span class="icon icon-very-small rounded-xs bg-blue-dark"><i class="bi bi-arrow-clockwise font-14 color-white"></i></span>
+                                <span class="icon icon-very-small rounded-xs bg-blue-dark"><i class="bi bi-hourglass-split font-14 color-white"></i></span>
                             </p>
                             <p class="text-center font-32 fw-bold color-blue-dark mb-0 open-jobs-upcoming-task-value">01</p>
                         </div>
-                        <div class="card-footer bg-white text-center border-0 py-1 px-2">
+                        <div class="card-footer bg-white text-center border-0 py-1 px-1">
                             <h3 class="font-14 mb-0 color-primary2-custom">Upcoming Task</h3>
                         </div>
                     </div>
@@ -403,7 +406,7 @@
             break;
             case 'https://fielddesk.in':
                 // fetchChartsDataApi = (date) => `${pageOrigin}/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
-                fetchChartsDataByParameter = (date, paramServiceType = '', paramTechDetails = '', paramRevenue = '') => `${pageOrigin}/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}&service_status=${parameter}`
+                fetchChartsDataByParameter = (date, paramServiceType = '', paramTechDetails = '', paramRevenue = '') => `${pageOrigin}/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}&service_status=${paramServiceType}&techdetail_filter=${paramTechDetails}&revenue_filter=${paramRevenue}`
             break;
         }
 
@@ -576,17 +579,31 @@
                 return;
             }
 
+            // Create a fragment to minimize reflows
+            const fragment = document.createDocumentFragment();
+
+            let col6Container = null; // Track the current `.col-6` container
             labels.forEach((label, index) => {
                 const value = series[index];
                 if (value === undefined) return; // Skip undefined values
 
+                // Create the `.col-6` container if none exists or if it already contains 3 items
+                if (!col6Container || col6Container.children.length === 3) {
+                    col6Container = document.createElement('div');
+                    col6Container.className = 'col-6';
+                    fragment.appendChild(col6Container);
+                }
+
+                // Create the legend item
                 const legendItem = document.createElement('div');
-                legendItem.className = 'legend-item font-15';
+                legendItem.className = 'legend-item font-11 d-flex justify-content-between';
+                $(legendItem).css({ "color": colors[index] || '#000', "font-weight": "bold" });
                 legendItem.innerHTML = `
                     <!-- <span class="legend-color"></span> -->
-                    <span style="color: ${colors[index] || '#000'}; font-weight: bold;">${label}: ${value}</span>
+                    <!-- <span style="color: ${colors[index] || '#000'}; font-weight: bold;">${label}: ${value}</span> -->
+                    <span style="color: ${colors[index] || '#000'}; font-weight: bold; word-break: break-all;">${label}</span> <span>:</span> <span>${value}</span>
                 `;
-                legendContainer.appendChild(legendItem);
+                col6Container.appendChild(legendItem);
 
                 // Add click event to toggle series visibility
                 legendItem.addEventListener('click', () => {
@@ -595,6 +612,9 @@
                     }
                 });
             });
+
+            // Append the fragment to the legend container
+            legendContainer.appendChild(fragment);
         }
 
         function chartUpdateFunc({newSeries, newLabels, service_type}) {

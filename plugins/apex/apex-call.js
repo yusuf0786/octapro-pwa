@@ -105,7 +105,7 @@ if(document.querySelector("#pieChart")) {
             width: 1,
             colors: ['#fff'],
           },
-        series: [24.53, 41.27, 21.27, 14.43, 12.31], // Updated values for each segment
+        // series: [24.53, 41.27, 21.27, 14.43, 12.31], // Updated values for each segment
         labels: ["PROCESSING", "CLOSED", "PENDING", "CANCEL"], // Updated labels
         colors: ['#FC6E51', '#7fb842', '#5D9CEC', '#d84558'],
         legend: {
