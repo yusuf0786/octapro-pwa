@@ -358,7 +358,7 @@
 		class="offcanvas offcanvas-top offcanvas-detached rounded-m">
 	</div>
 
-	<div class="offcanvas offcanvas-bottom rounded-m offcanvas-detached" id="menu-install-pwa-ios">
+	<!-- <div class="offcanvas offcanvas-bottom rounded-m offcanvas-detached" id="menu-install-pwa-ios">
         <div class="content">
         <img src="app/icons/icon-128x128.png" alt="img" width="80" class="rounded-m mx-auto my-4">
             <h1 class="text-center">Install PayApp</h1>
@@ -379,7 +379,7 @@
             <a href="#" class="pwa-install btn btn-m rounded-s text-uppercase font-900 gradient-highlight shadow-bg shadow-bg-s btn-full">Add to Home Screen</a><br>
             <a href="#" data-bs-dismiss="offcanvas" class="pwa-dismiss close-menu color-theme text-uppercase font-900 opacity-60 font-11 text-center d-block mt-n1">Maybe later</a>
         </div>
-    </div>
+    </div> -->
 
 </div>
 <!-- End of Page ID-->

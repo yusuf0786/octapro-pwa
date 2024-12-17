@@ -17,6 +17,120 @@ body * {
     font-family: Calibri, 'Trebuchet MS', sans-serif !important;
 }
 
+// attendence colors class defining
+.text-attendence-present {
+    color: #10661d !important;
+}
+.text-attendence-absent {
+    color: #600000 !important;
+}
+.text-attendence-leave {
+    color: #2c437a !important;
+}
+.text-attendence-holiday {
+    color: #8d0081 !important;
+}
+.text-attendence-weekoff {
+    color: var(--attendence-text-color) !important;
+}
+.text-attendence-working-hrs {
+    color: #5d2a00 !important;
+}
+.text-attendence-avg-working-hrs {
+    color: #5d5500 !important;
+}
+.text-attendence-productive-hrs {
+    color: #370060 !important;
+}
+.text-attendence-travaling-hrs {
+    color: #387982 !important;
+}
+.text-attendence-color {
+	color: var(--attendence-text-color) !important;
+}
+
+.text-api-present {
+    color: var(--attendence-present-color) !important;
+}
+.text-api-absent {
+    color: var(--attendence-absent-color) !important;
+}
+.text-api-leave {
+    color: var(--attendence-leave-color) !important;
+}
+.text-api-holiday {
+    color: var(--attendence-holiday-color) !important;
+}
+.text-api-weekoff {
+    color: var(--attendence-weekoff-color) !important;
+}
+
+.bg-present { background-color: #10661d !important; }
+.bg-absent { background-color: #600000 !important; }
+.bg-leave { background-color: #2c437a !important; }
+.bg-holiday { background-color: #8d0081 !important; }
+.bg-working-hrs { background-color: #5d2a00 !important; }
+.bg-avg-working-hrs { background-color: #5d5500 !important; }
+.bg-productive-hrs { background-color: #370060 !important; }
+.bg-travaling-hrs { background-color: #387982 !important; }
+
+.bg-attendence-present {
+    background-color: var(--attendence-present-color) !important;
+}
+.bg-attendence-absent {
+    background-color: var(--attendence-absent-color) !important;
+}
+.bg-attendence-leave {
+    background-color: var(--attendence-leave-color) !important;
+}
+.bg-attendence-holiday {
+    background-color: var(--attendence-holiday-color) !important;
+}
+.bg-attendence-weekoff {
+    background-color: var(--attendence-weekoff-color) !important;
+}
+.bg-attendence-working-hrs {
+    background-color: var(--attendence-working-color) !important;
+}
+.bg-attendence-avg-working-hrs {
+    background-color: var(--attendence-avg-working-color) !important;
+}
+.bg-attendence-productive-hrs {
+    background-color: var(--attendence-productive-color) !important;
+}
+.bg-attendence-travaling-hrs {
+    background-color: var(--attendence-travaling-color) !important;
+}
+
+.bg-tech-detail-present {
+	background-color: #aeffb5;
+}
+.bg-tech-detail-absent {
+	background-color: #ff9f95;
+}
+.bg-tech-detail-leave {
+	background-color: #b0ceed;
+}
+.bg-tech-detail-holiday {
+	background-color: #ff8cea;
+}
+.bg-tech-weekoff {
+	background-color: var(--attendence-weekoff-color);
+}
+.bg-tech-detail-working-hrs {
+	background-color: #ffbf94;
+}
+.bg-tech-detail-avg-working-hrs {
+	background-color: #fffd93;
+}
+.bg-tech-detail-productive-hrs {
+	background-color: #ba8ced;
+}
+.bg-tech-detail-travaling-hrs {
+	background-color: #b1eced;
+}
+// attendence colors class defining ends
+
 .bg-primary-custom {
     background-color: $primaryColor !important;
 }
