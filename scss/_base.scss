@@ -17,6 +17,16 @@ body * {
     font-family: Calibri, 'Trebuchet MS', sans-serif !important;
 }
 
+.loader-show {
+    opacity: 1;
+}
+
+.loader-hide {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: all 150ms ease !important;
+}
+
 // attendence colors class defining
 .text-attendence-present {
     color: #10661d !important;

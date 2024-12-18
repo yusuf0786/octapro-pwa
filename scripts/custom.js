@@ -919,29 +919,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 	// Switch statement to set active state
-        switch (currentUrl) {
-        case pathnameCheckWith.home:
-            $(navItems[2]).addClass("active")
-            break;
-        case pathnameCheckWith.home2:
-            $(navItems[2]).addClass("active")
-            break;
-        case pathnameCheckWith.tasks:
-            console.log($(navItems[0]));
-            $(navItems[0]).addClass("active")
-            break;
-        default:
-            // Remove active state from all items
-            $(navItems).each((i,d) => {
-                $(d).removeClass("active")
-            })
-            break;
-        }
+    switch (currentUrl) {
+    case pathnameCheckWith.home:
+        $(navItems[2]).addClass("active")
+        break;
+    case pathnameCheckWith.home2:
+        $(navItems[2]).addClass("active")
+        break;
+    case pathnameCheckWith.tasks:
+        console.log($(navItems[0]));
+        $(navItems[0]).addClass("active")
+        break;
+    default:
+        // Remove active state from all items
+        $(navItems).each((i,d) => {
+            $(d).removeClass("active")
+        })
+        break;
+    }
 
-        //Removing Preloader
-        setTimeout(function(){
-            var preloader = document.getElementById('preloader')
-            if(preloader){preloader.classList.add('preloader-hide');}
-        },150);
+    //Load scripts on click of navigation
+    const scriptLocation = "scripts/pages/"
+    $("body").on('click', "#footer-bar > a", function (){
+        const fileName = $(this).attr('data-file')
+        if(document.querySelectorAll('.added-script').length){
+            document.querySelectorAll('.added-script').forEach( (element) => element.remove())
+        }
+        const loadScript = document.getElementsByTagName('script')[1],
+            loadScriptJS = document.createElement('script');
+        loadScriptJS.type = 'text/javascript'
+        loadScriptJS.className = "added-script " + fileName
+        loadScriptJS.src = scriptLocation + fileName
+        loadScript.parentNode.insertBefore(loadScriptJS, loadScript);
+    })
     
 });

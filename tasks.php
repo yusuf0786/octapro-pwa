@@ -267,20 +267,6 @@
 
 <script src="scripts/bootstrap.min.js"></script>
 <script src="scripts/custom.js"></script>
-<script>
-    $(function(){
-        const pageOrigin = window.location.origin;
-        let fetchChartsDataApi = ''
-        switch (pageOrigin) {
-            case 'http://localhost':
-                fetchChartsDataApi = (date) => `${pageOrigin}:3000/api/app/getrcd//tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
-            break;
-            case 'https://fielddesk.in':
-                fetchChartsDataApi = (date) => `${pageOrigin}/app/getrcd/tech-services/dashboard.php?getdashboardrcd=true&filter=${date}`
-            break;
-        }
-        
-    })
-</script>
+<script src="scripts/pages/tasks.js" class="added-script tasks.js"></script>
 </body>
 </html>

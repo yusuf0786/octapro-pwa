@@ -1,0 +1,36 @@
+.indecators-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.indecators-box {
+    font-size: 0.75rem;
+    color: #0f0f0f;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+.indecators-box:last-child {
+    margin-right: 0;
+}
+.indecators-box .indecator {
+    width: 25px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+.indecators-box .indecator.indecator-present {
+    border-color: var(--attendence-present-color);
+}
+.indecators-box .indecator.indecator-leave {
+    border-color: var(--attendence-leave-color);
+}
+.indecators-box .indecator.indecator-absent {
+    border-color: var(--attendence-absent-color);
+}
+.indecators-box .indecator.indecator-holiday {
+    border-color: var(--attendence-holiday-color);
+}
