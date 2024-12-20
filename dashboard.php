@@ -89,7 +89,7 @@
                     
                     <h3 class="text-center pt-3 px-2 mb-2">Task Details:</h3>
                     <div class="pie-chart mx-auto no-clicks w-100s" id="pieChart" style="width: 100%;"></div>
-                    <div id="pieChartLegendsContainer" class="row g-2 ps-3 pe-0"></div>
+                    <div id="pieChartLegendsContainer" class="row g-2 ps-2 pe-0"></div>
 
                 </div>
                 <div class="col-6">

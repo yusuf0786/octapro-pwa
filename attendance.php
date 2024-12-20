@@ -40,7 +40,7 @@
         <!-- Page Title-->
         <div class="py-2 bg-primary-custom">
             <div class="page-title d-flex align-items-center pb-0">
-                <a href="/" class="icon icon-xs color-white ms-0 me-2 w-100" style="max-width: 25px;">
+                <a href="/" class="icon icon-xs color-white ms-0 me-3 w-100" style="max-width: 25px;">
                     <img src="images/arrow.png" alt="back arrow" class="w-100">
                 </a>
                 <div class="align-self-center ms-2 me-auto">

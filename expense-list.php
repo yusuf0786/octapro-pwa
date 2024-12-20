@@ -65,18 +65,30 @@
 <div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
 
 <!-- Page Wrapper-->
-<div id="page">
+<div id="page" class="h-100">
 
     <!-- footer bar -->
     <?php require_once("./components/footer-bar.php") ?>
 
     <!-- Page Content - Only Page Elements Here-->
-    <div class="page-content footer-clear">
+    <div class="page-content footer-clear-undefined h-100 pb-0 d-flex flex-column">
 
         <!-- Main header -->
-        <?php require_once("./main-header.php") ?>
+        <?php // require_once("./main-header.php") ?>
+
+        <!-- Page Title-->
+        <div class="py-2 bg-primary-custom flex-shrink-0">
+            <div class="page-title d-flex align-items-center pb-0">
+                <a href="/" class="icon icon-xs color-white ms-0 me-3 w-100" style="max-width: 25px;">
+                    <img src="images/arrow.png" alt="back arrow" class="w-100">
+                </a>
+                <div class="align-self-center ms-2 me-auto">
+                    <h2 class="color-white">Expense List</h2>
+                </div>
+            </div>
+        </div>
         
-        <div class="card card-style">
+        <div class="card card-style flex-fill pb-5">
             <div class="content mb-0">
 
                 <div class="row">
@@ -86,13 +98,13 @@
 
                             <div class="form-custom form-search form-label form-icon mb-0 w-100">
                                 <i class="bi bi-search font-14"></i>
-                                <input type="text" class="form-control rounded-5" id="search" placeholder="Type to Search..." required/>
+                                <input type="text" class="form-control rounded-5 fw-bold" id="search" placeholder="Type to Search..." required/>
                                 <!-- <label for="search" class="color-highlight form-label-always-">Search</label> -->
                             </div>
     
-                            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#addExpense" class="btn btn-xxs bg-primary-custom py-1 px-2 d-inline-flex align-items-center font-13 rounded-5 ms-2">
-                                <i class="bi bi-plus-circle-fill me-1"></i>
-                                ADD
+                            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#addExpense" class="btn btn-xxs bg-primary-custom py-0 px-1 d-inline-flex align-items-center font-13 rounded-5 ms-2" style="min-width: 58px; min-height: 27px;">
+                                <img src="images/plus.png" alt="plus image" class="w-100 me-1" style="max-width: 16px;">
+                                <span>ADD</span>
                             </a>
 
                         </div>
@@ -161,7 +173,7 @@
     <!-- Add Expense Off Canvas -->
     <div id="addExpense" class="offcanvas offcanvas-bottom offcanvas-detached-undefined rounded-m-undefined">
         <!-- menu-size will be the dimension of your menu. If you set it to smaller than your content it will scroll-->
-        <form class="menu-size" style="height:350px;" enctype="multipart/form-data" action="javascript:void(0)" method="POST" class="needs-validation octapro-form expense-add-form d-flex flex-column flex-nowrap overflow-hidden" novalidate>
+        <form style="height: 100%;" enctype="multipart/form-data" action="javascript:void(0)" method="POST" class="menu-size needs-validation octapro-form expense-add-form d-flex flex-column flex-nowrap overflow-hidden d-flex flex-column" novalidate>
             <div class="d-flex mx-3 mt-2">
                 <div class="align-self-center">
                     <h1 class="mb-0 font-18">ADD Expense</h1>
@@ -172,8 +184,8 @@
                     </a>
                 </div>
             </div>
-            <div class="divider divider-margins mt-2 mb-1"></div>
-            <div class="content mt-0">
+            <div class="content mt-0 overflow-auto">
+                <div class="divider mt-2 mb-1"></div>
                 <div class="pt-3"></div>
                 <div class="form-custom form-label form-icon">
                     <i class="bi bi-calendar font-12"></i>
@@ -212,8 +224,8 @@
 						<p class="btn btn-full btn-m text-uppercase font-700 upload-file-text bg-highlight rounded-5 py-2">Upload Image</p>
 					</div>
 				</div>
-                <div class="divider my-2"></div>
             </div>
+            <div class="divider mb-3 mt-auto mx-3"></div>
             <div class="px-3">
                 <button type="submit" href="#" class="btn btn-full gradient-green rounded-5 shadow-bg shadow-bg-s mb-4 w-100 py-2">Add Now</button>
             </div>
@@ -223,7 +235,7 @@
     <!-- View Expense Off Canvas -->
     <div id="viewExpense" class="offcanvas offcanvas-bottom offcanvas-detached-undefined rounded-m-undefined">
         <!-- menu-size will be the dimension of your menu. If you set it to smaller than your content it will scroll-->
-        <form class="menu-size" style="height:350px;" enctype="multipart/form-data" action="javascript:void(0)" method="POST" class="needs-validation octapro-form expense-add-form d-flex flex-column flex-nowrap overflow-hidden" novalidate>
+        <form style="height: 100%;" enctype="multipart/form-data" action="javascript:void(0)" method="POST" class="menu-size needs-validation octapro-form expense-add-form d-flex flex-column flex-nowrap overflow-hidden" novalidate>
             <div class="d-flex mx-3 mt-2">
                 <div class="align-self-center">
                     <h1 class="mb-0 font-18">View Expense</h1>
@@ -234,8 +246,8 @@
                     </a>
                 </div>
             </div>
-            <div class="divider divider-margins mt-2 mb-1"></div>
-            <div class="content mt-0">
+            <div class="content mt-0 overflow-auto">
+                <div class="divider mt-2 mb-1"></div>
                 <div class="pt-3"></div>
                 <div class="form-custom form-label form-icon">
                     <i class="bi bi-calendar font-12"></i>
@@ -274,8 +286,8 @@
 						<p class="btn btn-full btn-m text-uppercase font-700 upload-file-text bg-highlight rounded-5 py-2">Upload Image</p>
 					</div>
 				</div>
-                <div class="divider my-2"></div>
             </div>
+            <div class="divider mb-3 mt-auto mx-3"></div>
             <div class="px-3">
                 <button type="button" data-bs-dismiss="offcanvas" href="#" class="btn btn-full gradient-red rounded-5 shadow-bg shadow-bg-s mb-4 w-100 py-1">
                     <i class="bi bi-x color-white font-16 line-height-xl align-middle"></i>

@@ -7,6 +7,9 @@ $(function(){
 
     setTimeout(async () => {
         
+        $("html").css("height","100%")
+        $("body").css("height","100%")
+        
         // API Data Fectch JS Starts Here
         let fetchTechnicianExpenseList = ''
         let postTechnicianExpenseList = ''

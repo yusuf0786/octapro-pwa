@@ -212,7 +212,7 @@ $(function(){
                 legendItem.innerHTML = `
                     <!-- <span class="legend-color"></span> -->
                     <!-- <span style="color: ${colors[index] || '#000'}; font-weight: bold;">${label}: ${value}</span> -->
-                    <span style="color: ${colors[index] || '#000'}; font-weight: bold; word-break: break-all;">${label}</span> <span>:</span> <span>${value}</span>
+                    <span style="color: ${colors[index] || '#000'}; font-weight: bold;">${label}</span> <span>:</span> <span>${value}</span>
                 `;
                 col6Container.appendChild(legendItem);
 
