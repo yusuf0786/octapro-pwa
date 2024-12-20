@@ -11,10 +11,10 @@ $(function() {
         let fetchTechnicianDetailsApi = ''
         switch (pageOrigin) {
             case 'http://localhost':
-                fetchTechnicianDetailsApi = (technician, month = '', year = '') => `${pageOrigin}:3000/api/app/getrcd/technicianattendancedetail.php?technician=${technician}&month=${month}&year=${year}`
+                fetchTechnicianDetailsApi = (month = '', year = '') => `${pageOrigin}:3000/api/app/getrcd/tech-services/attendancedetail.php?month=${month}&year=${year}`
             break;
             case 'https://fielddesk.in':
-                fetchTechnicianDetailsApi = (technician, month = '', year = '') => `${pageOrigin}/app/getrcd/technicianattendancedetail.php?technician=${technician}&month=${month}&year=${year}`
+                fetchTechnicianDetailsApi = (month = '', year = '') => `${pageOrigin}/app/getrcd/tech-services/attendancedetail.php?month=${month}&year=${year}`
             break;
         }
 
@@ -37,7 +37,7 @@ $(function() {
                 console.log(error);
             }
         }
-        fetchAPIFunc(fetchTechnicianDetailsApi('RAJKAMAL', 11, 2024))
+        fetchAPIFunc(fetchTechnicianDetailsApi(11, 2024))
         
         function inputTechnicianData(data) {
             // set css variables from api 
@@ -109,7 +109,7 @@ $(function() {
                     const outTimeLatitude = attendance.outTimeLatitude || "";
                     const outTimeLongitude = attendance.outTimeLongitude || "";
                     
-                    const dayClass = status === "Present" ? "attended" : status === "Leave" ? "leave" : status === "Holiday" ? "holiday" : status === "Absent" ? "absent" : "";
+                    const dayClass = status === "Present" ? "attended-undefined" : status === "Leave" ? "leave" : status === "Holiday" ? "holiday" : status === "Absent" ? "absent" : "";
 
                     const dayElement = `
                             <div class="day d-flex">

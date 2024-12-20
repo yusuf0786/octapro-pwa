@@ -1,3 +1,5 @@
+@use "sass:color";
+
 h3 {
     font-size: 16px;
 }
@@ -15,6 +17,7 @@ body {
 }
 body * {
     font-family: Calibri, 'Trebuchet MS', sans-serif !important;
+    letter-spacing: 0.2px;
 }
 
 .loader-show {
@@ -25,6 +28,14 @@ body * {
     opacity: 0 !important;
     pointer-events: none !important;
     transition: all 150ms ease !important;
+}
+
+.bg-primary-custom {
+    background-color: $primaryColor;
+}
+
+.shadow-li-custom {
+    box-shadow: 0 0 4px 1px color.adjust($primaryColor, $lightness: 30%) !important;
 }
 
 // attendence colors class defining

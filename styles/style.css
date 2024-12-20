@@ -4064,6 +4064,29 @@ input {
   position: relative;
 }
 
+.form-custom.form-search {
+  color: #3a57c0;
+}
+.form-custom.form-search .form-control {
+  height: auto !important;
+  padding: 6px 10px 6px 30px !important;
+  border: 1px solid #3a57c0 !important;
+  box-shadow: 0px 1px 1px 1px #3a57c040;
+  color: #3a57c0 !important;
+}
+.form-custom.form-search .form-control::placeholder {
+  color: #3a57c0 !important;
+}
+.form-custom.form-search > i {
+  height: 100% !important;
+  width: auto !important;
+  line-height: normal !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
 .form-border * {
   border-left: 0px !important;
   border-right: 0px !important;
@@ -4413,6 +4436,10 @@ input[type=range] {
 }
 
 .offcanvas-bottom {
+  top: 0;
+}
+
+.offcanvas-bottom.offcanvas-detached {
   top: auto;
 }
 
@@ -4718,9 +4745,14 @@ html {
 }
 #calendar-header #prev-month,
 #calendar-header #next-month {
-  font-size: 1.25rem;
-  padding: 2px 8px;
+  padding: 9px 8px;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1) !important;
+}
+#calendar-header #prev-month > img,
+#calendar-header #next-month > img {
+  display: block;
+  width: 100%;
+  max-width: 18px;
 }
 
 #calendar-body {
@@ -4735,12 +4767,12 @@ html {
   font-size: 14px;
   font-weight: 400;
   color: #fff;
-  background-color: #15558d;
+  background-color: #3a57c0;
 }
 #calendar-content .day {
   font-size: 14px;
   font-weight: 400;
-  padding: 8px 4px;
+  padding: 9px 4px;
   color: #000;
   text-align: center;
 }
@@ -4753,16 +4785,16 @@ html {
   height: 32px;
 }
 #calendar-content .day .attended {
-  border: 1px solid var(--attendence-present-color);
+  border: 3px solid var(--attendence-present-color);
 }
 #calendar-content .day .absent {
-  border: 1px solid var(--attendence-absent-color);
+  border: 3px solid var(--attendence-absent-color);
 }
 #calendar-content .day .leave {
-  border: 1px solid var(--attendence-leave-color);
+  border: 3px solid var(--attendence-leave-color);
 }
 #calendar-content .day .holiday {
-  border: 1px solid var(--attendence-holiday-color);
+  border: 3px solid var(--attendence-holiday-color);
 }
 #calendar-content .day .blank {
   border: none;
@@ -4802,6 +4834,7 @@ body {
 
 body * {
   font-family: Calibri, "Trebuchet MS", sans-serif !important;
+  letter-spacing: 0.2px;
 }
 
 .loader-show {
@@ -4812,6 +4845,14 @@ body * {
   opacity: 0 !important;
   pointer-events: none !important;
   transition: all 150ms ease !important;
+}
+
+.bg-primary-custom {
+  background-color: #3a57c0;
+}
+
+.shadow-li-custom {
+  box-shadow: 0 0 4px 1px rgb(172.824, 185.236, 230.176) !important;
 }
 
 .text-attendence-present {
@@ -5066,10 +5107,11 @@ div.ambouse-lg {
 }
 
 .indecators-box {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: #0f0f0f;
   display: inline-block;
   margin-right: 0.5rem;
+  margin-bottom: 0.875rem;
 }
 
 .indecators-box:last-child {
@@ -5077,12 +5119,12 @@ div.ambouse-lg {
 }
 
 .indecators-box .indecator {
-  width: 25px;
-  height: 26px;
+  font-size: 1rem;
+  width: 38px;
+  padding: 3px 0px;
   border-radius: 50%;
-  border: 1px solid #000;
+  border: 4px solid #000;
   display: inline-block;
-  vertical-align: middle;
   text-align: center;
 }
 

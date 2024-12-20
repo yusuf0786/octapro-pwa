@@ -78,81 +78,67 @@
         
         <div class="card card-style">
             <div class="content mb-0">
-                <div class="tabs tabs-pill" id="tab-group-2">
-                    <div class="tab-controls rounded-m p-1 overflow-visible">
-                        <a class="font-13 rounded-s py-1 shadow-bg shadow-bg-s" data-bs-toggle="collapse" href="#tab-4" aria-expanded="true">Expense List</a>
-                        <a class="font-13 rounded-s py-1 shadow-bg shadow-bg-s" data-bs-toggle="collapse" href="#tab-5" aria-expanded="false">Add New Expense</a>
+
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="d-flex align-items-center mb-3">
+
+                            <div class="form-custom form-search form-label form-icon mb-0 w-100">
+                                <i class="bi bi-search font-14"></i>
+                                <input type="text" class="form-control rounded-5" id="search" placeholder="Type to Search..." required/>
+                                <!-- <label for="search" class="color-highlight form-label-always-">Search</label> -->
+                            </div>
+    
+                            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#addExpense" class="btn btn-xxs bg-primary-custom py-1 px-2 d-inline-flex align-items-center font-13 rounded-5 ms-2">
+                                <i class="bi bi-plus-circle-fill me-1"></i>
+                                ADD
+                            </a>
+
+                        </div>
+
                     </div>
-                    <div class="mt-3"></div>
-                    <!-- Tab Bills List -->
-                    <div class="collapse show" id="tab-4" data-bs-parent="#tab-group-2">
-                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
-                            <div class="align-self-center">
-                                <h5 class="pt-1 mb-n1">Water Bill</h5>
-                                <p class="mb-0 font-11 opacity-70">Overdue by 3 Days</p>
-                            </div>
-                            <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1">$15.35</h4>
-                                <p class="mb-0 font-11 color-red-light">Bill Unpaid</p>
-                            </div>
-                        </a>
-                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
-                            <div class="align-self-center">
-                                <h5 class="pt-1 mb-n1">Telephone Bill</h5>
-                                <p class="mb-0 font-11 opacity-70">Due in 14 Days</p>
-                            </div>
-                            <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1">$31.41</h4>
-                                <p class="mb-0 font-11 color-red-light">Bill Unpaid</p>
-                            </div>
-                        </a>
-                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-bill" class="d-flex py-1 mb-2">
-                            <div class="align-self-center">
-                                <h5 class="pt-1 mb-n1">Cloud Storage</h5>
-                                <p class="mb-0 font-11 opacity-70">Due in 16 Days</p>
-                            </div>
-                            <div class="align-self-center ms-auto text-end">
-                                <h4 class="pt-1 mb-n1">$43.21</h4>
-                                <p class="mb-0 font-11 color-yellow-dark">Pending</p>
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <!-- Tab Custom Payments-->
-                    <form class="collapse" id="tab-5" data-bs-parent="#tab-group-2" enctype="multipart/form-data" action="javascript:void(0)" method="POST" class="needs-validation octapro-form expense-add-form d-flex flex-column flex-nowrap overflow-hidden" novalidate>
-                        <div class="pt-3"></div>
-                        <div class="form-custom form-label form-icon">
-                            <i class="bi bi-calendar font-12"></i>
-                            <input type="date" class="form-control rounded-xs" id="c5" required/>
-                            <label for="c5" class="color-theme">Select a Date</label>
-                            <div class="valid-feedback">HTML5 does not offer Dates Field Validation!<!-- text for field valid--></div>
-                        </div>
-                        <div class="pb-2"></div>
-                        <div class="form-custom form-label form-icon">
-                            <i class="bi bi-cash-stack font-13"></i>
-                            <select class="form-select rounded-xs" id="expenseTypeDD" required>
-                                <option value="0" disabled selected>Select Expense Type</option>
-                            </select>
-                            <label for="c61" class="color-highlight form-label-always-">Expense Type</label>
-                        </div>
-                        <div class="pb-2"></div>
-                        <div class="form-custom form-label form-icon">
-                            <i class="bi bi-currency-rupee font-14"></i>
-                            <input type="text" class="form-control rounded-xs" id="c31" placeholder="Enter Amount" required/>
-                            <label for="c31" class="color-highlight form-label-always-">Enter Amount</label>
-                            <span>(required)</span>
-                        </div>
-                        <div class="pb-2"></div>
-                        <div class="form-custom form-label form-icon mb-3">
-                            <i class="bi bi-pencil-fill font-12"></i>
-                            <textarea class="form-control rounded-xs" placeholder="Remark" id="c7"></textarea>
-                            <label for="c7" class="color-theme">Remark</label>
-                            <div class="valid-feedback">HTML5 does not offer Dates Field Validation!<!-- text for field valid--></div>
-                        </div>
-                        <div class="pb-3"></div>
-                        <a href="#" class="btn btn-full gradient-green rounded-s shadow-bg shadow-bg-s mb-4">Add Now</a>
-                    </form>
                 </div>
+
+                <div class="row">
+                    <div class="col-12">
+
+                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#viewExpense" class="d-flex py-1 mb-3 rounded-3 px-2 mx-n1 shadow-li-custom">
+                            <div class="align-self-center">
+                                <h5 class="pt-1 mb-n1 font-14">Water Bill</h5>
+                                <p class="mb-0 font-12 fw-light text-dark">00-00-0000</p>
+                            </div>
+                            <div class="align-self-center ms-auto text-end">
+                                <h4 class="pt-1 mb-n1 text-primary">RS 500</h4>
+                                <p class="mb-0 font-12 text-primary">Pending</p>
+                            </div>
+                        </a>                
+
+                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#viewExpense" class="d-flex py-1 mb-3 rounded-3 px-2 mx-n1 shadow-li-custom">
+                            <div class="align-self-center">
+                                <h5 class="pt-1 mb-n1 font-14">Water Bill</h5>
+                                <p class="mb-0 font-12 fw-light text-dark">00-00-0000</p>
+                            </div>
+                            <div class="align-self-center ms-auto text-end">
+                                <h4 class="pt-1 mb-n1 text-success">RS 300</h4>
+                                <p class="mb-0 font-12 text-success">Approve</p>
+                            </div>
+                        </a>
+                        
+                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#viewExpense" class="d-flex py-1 mb-3 rounded-3 px-2 mx-n1 shadow-li-custom">
+                            <div class="align-self-center">
+                                <h5 class="pt-1 mb-n1 font-14">Water Bill</h5>
+                                <p class="mb-0 font-12 fw-light text-dark">00-00-0000</p>
+                            </div>
+                            <div class="align-self-center ms-auto text-end">
+                                <h4 class="pt-1 mb-n1 text-danger">RS 500</h4>
+                                <p class="mb-0 font-12 text-danger">Cancel</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                
             </div>
         </div>
 
@@ -172,13 +158,13 @@
 		class="offcanvas offcanvas-top offcanvas-detached rounded-m">
 	</div>
 
-	<!-- Bill Button Menu -->
-    <div id="menu-bill" class="offcanvas offcanvas-bottom offcanvas-detached rounded-m">
+    <!-- Add Expense Off Canvas -->
+    <div id="addExpense" class="offcanvas offcanvas-bottom offcanvas-detached-undefined rounded-m-undefined">
         <!-- menu-size will be the dimension of your menu. If you set it to smaller than your content it will scroll-->
-        <div class="menu-size" style="height:350px;">
-            <div class="d-flex mx-3 mt-3 py-1">
+        <form class="menu-size" style="height:350px;" enctype="multipart/form-data" action="javascript:void(0)" method="POST" class="needs-validation octapro-form expense-add-form d-flex flex-column flex-nowrap overflow-hidden" novalidate>
+            <div class="d-flex mx-3 mt-2">
                 <div class="align-self-center">
-                    <h1 class="mb-0">Edit Expense</h1>
+                    <h1 class="mb-0 font-18">ADD Expense</h1>
                 </div>
                 <div class="align-self-center ms-auto">
                     <a href="#" class="ps-4 shadow-0 me-n2" data-bs-dismiss="offcanvas">
@@ -186,44 +172,117 @@
                     </a>
                 </div>
             </div>
-            <div class="divider divider-margins mt-3 mb-2"></div>
+            <div class="divider divider-margins mt-2 mb-1"></div>
             <div class="content mt-0">
-
-                <form enctype="multipart/form-data" action="javascript:void(0)" method="POST" class="needs-validation octapro-form expense-edit-form d-flex flex-column flex-nowrap overflow-hidden" novalidate>
-
-                    <div class="form-custom form-label form-icon">
-                        <i class="bi bi-calendar font-12"></i>
-                        <input type="date" class="form-control rounded-xs" id="c5" required/>
-                        <label for="c5" class="color-theme">Select a Date</label>
-                        <div class="valid-feedback">HTML5 does not offer Dates Field Validation!<!-- text for field valid--></div>
-                    </div>
-                    <div class="pb-2"></div>
-                    <div class="form-custom form-label form-icon">
-                        <i class="bi bi-cash-stack font-13"></i>
-                        <select class="form-select rounded-xs" id="expenseTypeEditDD" required>
-                        </select>
-                        <label for="c61" class="color-highlight form-label-always-">Expense Type</label>
-                    </div>
-                    <div class="pb-2"></div>
-                    <div class="form-custom form-label form-icon">
-                        <i class="bi bi-currency-rupee font-14"></i>
-                        <input type="text" class="form-control rounded-xs" id="c31" placeholder="Enter Amount" required/>
-                        <label for="c31" class="color-highlight form-label-always-">Enter Amount</label>
-                        <span>(required)</span>
-                    </div>
-                    <div class="pb-2"></div>
-                    <div class="form-custom form-label form-icon mb-3">
-                        <i class="bi bi-pencil-fill font-12"></i>
-                        <textarea class="form-control rounded-xs" placeholder="Remark" id="c7"></textarea>
-                        <label for="c7" class="color-theme">Remark</label>
-                        <div class="valid-feedback">HTML5 does not offer Dates Field Validation!<!-- text for field valid--></div>
-                    </div>
-
-                </form>
-                
+                <div class="pt-3"></div>
+                <div class="form-custom form-label form-icon">
+                    <i class="bi bi-calendar font-12"></i>
+                    <input type="date" class="form-control rounded-xs" id="trnsDate" name="trn_date" required/>
+                    <label for="trnsDate" class="color-theme">Select a Date</label>
+                    <div class="valid-feedback">HTML5 does not offer Dates Field Validation!<!-- text for field valid--></div>
+                </div>
+                <div class="pb-2"></div>
+                <div class="form-custom form-label form-icon">
+                    <i class="bi bi-cash-stack font-13"></i>
+                    <select class="form-select rounded-xs" id="expenseTypeDD" name="expense_type" required>
+                        <option value="0" disabled selected>Select Expense Type</option>
+                    </select>
+                    <label for="expenseTypeDD" class="color-highlight form-label-always-">Expense Type</label>
+                </div>
+                <div class="pb-2"></div>
+                <div class="form-custom form-label form-icon">
+                    <i class="bi bi-currency-rupee font-14"></i>
+                    <input type="text" class="form-control rounded-xs" id="amount" name="amount" placeholder="Enter Amount" required/>
+                    <label for="amount" class="color-highlight form-label-always-">Enter Amount</label>
+                    <span>(required)</span>
+                </div>
+                <div class="pb-2"></div>
+                <div class="form-custom form-label form-icon mb-3">
+                    <i class="bi bi-pencil-fill font-12"></i>
+                    <textarea class="form-control rounded-xs" placeholder="Remark" id="remark" name="remark"></textarea>
+                    <label for="remark" class="color-theme">Remark</label>
+                    <div class="valid-feedback">HTML5 does not offer Dates Field Validation!<!-- text for field valid--></div>
+                </div>
+                <div class="file-data">
+					<img id="image-data" src="images/empty.png" class="img-fluid rounded-s" alt="img">
+					<span class="upload-file-name d-block text-center" data-text-before="&lt;i class='bi bi-check-circle-fill color-green-dark pe-2'&gt;&lt;/i&gt; Image:" data-text-after=" is ready.">
+					</span>
+					<div>
+						<input type="file" class="upload-file" accept="image/*" name="expense_photo">
+						<p class="btn btn-full btn-m text-uppercase font-700 upload-file-text bg-highlight rounded-5 py-2">Upload Image</p>
+					</div>
+				</div>
+                <div class="divider my-2"></div>
             </div>
-            <a href="#" data-bs-dismiss="offcanvas" class="mx-3 btn btn-full gradient-blue shadow-bg shadow-bg-s">Tap to Pay -  145 USD</a>
-        </div>
+            <div class="px-3">
+                <button type="submit" href="#" class="btn btn-full gradient-green rounded-5 shadow-bg shadow-bg-s mb-4 w-100 py-2">Add Now</button>
+            </div>
+        </form>
+    </div>
+    
+    <!-- View Expense Off Canvas -->
+    <div id="viewExpense" class="offcanvas offcanvas-bottom offcanvas-detached-undefined rounded-m-undefined">
+        <!-- menu-size will be the dimension of your menu. If you set it to smaller than your content it will scroll-->
+        <form class="menu-size" style="height:350px;" enctype="multipart/form-data" action="javascript:void(0)" method="POST" class="needs-validation octapro-form expense-add-form d-flex flex-column flex-nowrap overflow-hidden" novalidate>
+            <div class="d-flex mx-3 mt-2">
+                <div class="align-self-center">
+                    <h1 class="mb-0 font-18">View Expense</h1>
+                </div>
+                <div class="align-self-center ms-auto">
+                    <a href="#" class="ps-4 shadow-0 me-n2" data-bs-dismiss="offcanvas">
+                        <i class="bi bi-x color-red-dark font-26 line-height-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="divider divider-margins mt-2 mb-1"></div>
+            <div class="content mt-0">
+                <div class="pt-3"></div>
+                <div class="form-custom form-label form-icon">
+                    <i class="bi bi-calendar font-12"></i>
+                    <input type="date" class="form-control rounded-xs" id="trnsDate" name="trn_date" required/>
+                    <label for="trnsDate" class="color-theme">Select a Date</label>
+                    <div class="valid-feedback">HTML5 does not offer Dates Field Validation!<!-- text for field valid--></div>
+                </div>
+                <div class="pb-2"></div>
+                <div class="form-custom form-label form-icon">
+                    <i class="bi bi-cash-stack font-13"></i>
+                    <select class="form-select rounded-xs" id="expenseTypeDD" name="expense_type" required>
+                        <option value="0" disabled selected>Select Expense Type</option>
+                    </select>
+                    <label for="expenseTypeDD" class="color-highlight form-label-always-">Expense Type</label>
+                </div>
+                <div class="pb-2"></div>
+                <div class="form-custom form-label form-icon">
+                    <i class="bi bi-currency-rupee font-14"></i>
+                    <input type="text" class="form-control rounded-xs" id="amount" name="amount" placeholder="Enter Amount" required/>
+                    <label for="amount" class="color-highlight form-label-always-">Enter Amount</label>
+                    <span>(required)</span>
+                </div>
+                <div class="pb-2"></div>
+                <div class="form-custom form-label form-icon mb-3">
+                    <i class="bi bi-pencil-fill font-12"></i>
+                    <textarea class="form-control rounded-xs" placeholder="Remark" id="remark" name="remark"></textarea>
+                    <label for="remark" class="color-theme">Remark</label>
+                    <div class="valid-feedback">HTML5 does not offer Dates Field Validation!<!-- text for field valid--></div>
+                </div>
+                <div class="file-data">
+					<img id="image-data" src="images/empty.png" class="img-fluid rounded-s" alt="img">
+					<span class="upload-file-name d-block text-center" data-text-before="&lt;i class='bi bi-check-circle-fill color-green-dark pe-2'&gt;&lt;/i&gt; Image:" data-text-after=" is ready.">
+					</span>
+					<div>
+						<input type="file" class="upload-file" accept="image/*" name="expense_photo">
+						<p class="btn btn-full btn-m text-uppercase font-700 upload-file-text bg-highlight rounded-5 py-2">Upload Image</p>
+					</div>
+				</div>
+                <div class="divider my-2"></div>
+            </div>
+            <div class="px-3">
+                <button type="button" data-bs-dismiss="offcanvas" href="#" class="btn btn-full gradient-red rounded-5 shadow-bg shadow-bg-s mb-4 w-100 py-1">
+                    <i class="bi bi-x color-white font-16 line-height-xl align-middle"></i>
+                    Close
+                </button>
+            </div>
+        </form>
     </div>
 
 </div>
@@ -237,157 +296,6 @@
 <script src="plugins/daterangepicker/daterangepicker.js"></script>
 
 <script src="scripts/custom.js"></script>
-<script>
-    $(async function(){
-        if(preloader){preloader.classList.remove('preloader-hide');}
-
-        // API Data Fectch JS Starts Here
-        let fetchTechnicianExpenseList = ''
-        let postTechnicianExpenseList = ''
-        let getItemById = ''
-        let fetchExpenseTypeList = ''
-
-        const pageOrigin = window.location.origin;
-        const pagePathName = window.location.pathname;
-        switch (pageOrigin) {
-            case 'http://localhost':
-                fetchTechnicianExpenseList = `${pageOrigin}:3000/api/app/getrcd/technician_expenselist.php`
-                postTechnicianExpenseList = `${pageOrigin}:3000/api/app/getrcd/technician_expense.php`
-                getItemById = `${pageOrigin}:3000/api/app/getrcd/technician_expense.php?getexpenseid=`
-                fetchExpenseTypeList = `${pageOrigin}:3000/api/app/getrcd/expense.php?expensetypelist=true`
-            break;
-            case 'https://fielddesk.in':
-                fetchTechnicianExpenseList = `${pageOrigin}/app/getrcd/technician_expenselist.php`
-                postTechnicianExpenseList = `${pageOrigin}/app/getrcd/technician_expense.php`
-                getItemById = `${pageOrigin}/app/getrcd/technician_expense.php?getexpenseid=`
-                fetchExpenseTypeList = `${pageOrigin}/app/getrcd/expense.php?expensetypelist=true`
-            break;
-        }
-
-        // Disable Modal Buttons Function
-        function disableModalBtns(element, cancelBtn, closeBtn, saveBtn) {
-            $(element).find(cancelBtn).prop('disabled', true);
-            $(element).find(closeBtn).prop('disabled', true);
-            $(element).find(saveBtn).prop('disabled', true);
-        }
-        // Enable Modal Buttons Function
-        function enableModalBtns(element, cancelBtn, closeBtn, saveBtn) {
-            $(element).find(cancelBtn).prop('disabled', false);
-            $(element).find(closeBtn).prop('disabled', false);
-            $(element).find(saveBtn).prop('disabled', false);
-        }
-
-        const fetchAPIFunc = async (fetchAPI) => {
-            try {
-                const response = await fetch(fetchAPI)
-                const data = await response.json()
-
-                console.log(data);
-            } catch (error) { console.log(error); }
-        }
-        fetchAPIFunc(fetchTechnicianExpenseList)
-        
-        // fetch select options manually
-        function manualFetchSelectOptions(element, optionsData) {
-            optionsData.forEach(optionData => {
-                const option = document.createElement('option');
-                option.text = optionData.text;
-                option.value = optionData.id;
-                $(element).append(option);
-            });
-        }
-
-        const expenseTypeData = []
-
-        const fetchExpenseTypeListFunc = async (fetchAPI) => {
-            try {
-                const response = await fetch(fetchAPI)
-                const data = await response.json()
-                data.map(d => expenseTypeData.push({id: d.id, text: d.name}) )
-                manualFetchSelectOptions("#expenseTypeDD", expenseTypeData)
-                manualFetchSelectOptions("#expenseTypeEditDD", expenseTypeData)
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        await fetchExpenseTypeListFunc(fetchExpenseTypeList)
-
-        // add customer form submit
-        const addFormSubmit = ({api, formParentModal, itemNameAlert}) => {
-            const form = $(formParentModal).find("#itemForm")
-            const cancelBtn = $(formParentModal).find(".itemFormCancelBtn")
-            const closeBtn = $(formParentModal).find(".itemFormCloseBtn")
-            const saveBtn = $(formParentModal).find(".itemFormSubmtBtn")
-
-            $(form).submit(function(e) {
-                e.preventDefault()
-
-                // validating form
-                if (this.checkValidity() === false) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                } else { // exicuting form if validated
-                    disableModalBtns(this, cancelBtn, closeBtn, saveBtn)
-                    $(saveBtn).prepend(`<span class="spinner-border spinner-border-sm me-2" id="modalBtnLoader" role="status"></span>`)
-
-                    $.ajax( {
-                        url: api,
-                        type: 'POST',
-                        data: new FormData(this),
-                        dataType: 'text',
-                        contentType: false,
-                        cache: false,
-                        processData:false,
-                    
-                        success: function(data, textStatus, jqXHR) {
-                            if (jqXHR.status === 204 || jqXHR.status === 200) {
-                                enableModalBtns(form, cancelBtn, closeBtn, saveBtn)
-                                $(saveBtn).find("#modalBtnLoader").remove()
-                                $(form).removeClass('was-validated')
-                                const msg = JSON.parse(data)
-                                if (msg.status) {
-                                    if (formParentModal) $(formParentModal).modal('hide');
-                                    
-                                    // fetchMasterTable(fetchTechnicianDetailsApi(urlTechnician(), urlMonth(), urlYear()), 'details')
-                                    setTimeout(() => {
-                                        $(form)[0].reset() 
-                                        // $(form).find("select").trigger('change')
-                                        // $(form).find(".summernote").summernote("code", "")
-                                    }, 500);
-                                    showToast('success', msg.message)
-                                } else {
-                                    showToast('error', msg.message)
-                                }   
-                            } else {
-                                console.error(data === "" ? "Empty Response" : data);
-                                enableModalBtns(form, cancelBtn, closeBtn, saveBtn)
-                                $(saveBtn).find("#modalBtnLoader").remove()
-                            }
-                        },
-                        error: function(xhr, status, error) {
-                            console.error(error);
-                            enableModalBtns(form, cancelBtn, closeBtn, saveBtn)
-                            $(saveBtn).find("#modalBtnLoader").remove()
-                        }
-                    });
-                }
-                this.classList.add('was-validated');
-            });
-        }
-
-        const addFormSubmitFuncParam = {
-            api: postTechnicianExpenseList,
-            // formParentModal: '#techAttendenceUpdateModal',
-            formParentModal: '',
-            // itsTable: '.product-list-table', 
-            // itsTableFetchFunction: fetchDataTable,
-            // itsTableFetchFunctionApi: customerApiURL,
-            itemNameAlert: "",
-        };
-        addFormSubmit(addFormSubmitFuncParam)
-        
-        if(preloader){preloader.classList.add('preloader-hide');}
-    })
-</script>
+<script src="scripts/pages/expense-list.js" class="added-script expense-list.js"></script>
 </body>
 </html>

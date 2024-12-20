@@ -32,10 +32,22 @@
     <?php require_once("./components/footer-bar.php") ?>
 
     <!-- Page Content - Only Page Elements Here-->
-    <div class="page-content footer-clear">
+    <div class="page-content footer-clear-undefined">
 
         <!-- Main header -->
-        <?php require_once("./main-header.php") ?>
+        <?php // require_once("./main-header.php") ?>
+        
+        <!-- Page Title-->
+        <div class="py-2 bg-primary-custom">
+            <div class="page-title d-flex align-items-center pb-0">
+                <a href="/" class="icon icon-xs color-white ms-0 me-2 w-100" style="max-width: 25px;">
+                    <img src="images/arrow.png" alt="back arrow" class="w-100">
+                </a>
+                <div class="align-self-center ms-2 me-auto">
+                    <h2 class="color-white">My Attendance</h2>
+                </div>
+            </div>
+        </div>
 
         <!-- calendar section -->
         <div class="contianer-fluid px-2 bg-white rounded-s mx-2 mt-3 mb-3 pb-2">
@@ -45,11 +57,15 @@
 
                     <div id="calendar-container">
                         <div id="calendar-header" class="mb-2 pb-2 pt-2 border-bottom bg-theme-primary mb-0 rounded-top-5 position-relative d-flex justify-content-between align-items-center">
-                            <button id="prev-month" class="btn btn-info bg-transparent border-0 text-primary rounded-circle"><i class="bi bi-arrow-left" aria-hidden="true"></i></button>
+                            <button id="prev-month" class="btn btn-info bg-transparent border-0 text-primary rounded-circle bg-primary-custom text-white ">
+                                <img src="images/arrow.png" alt="left arrow">
+                            </button>
                             <h4 id="month-year" class="fw-bold text-primary mb-0"></h4>
-                            <button id="next-month" class="btn btn-info bg-transparent border-0 text-primary rounded-circle"><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                            <button id="next-month" class="btn btn-info bg-transparent border-0 text-primary rounded-circle bg-primary-custom text-white ">
+                                <img src="images/arrow-left.png" alt="right arrow">
+                            </button>
                         </div>
-                        <div id="calendar-body">
+                        <div id="calendar-body" class="pb-5">
                             <div id="calendar-content"></div>
                         </div>
                     </div>
@@ -60,43 +76,43 @@
         </div>
 
         <!-- indecators section -->
-        <div class="contianer-fluid bg-white rounded-s mx-2">
-            <div class="row g-0">
+        <div class="contianer-fluid bg-white rounded-s rounded-top mx-2">
+            <div class="row indecators-container px-4 py-3 pb-5">
 
-                <div class="col-12">
-
-                    <div class="indecators-container py-1">
-
-                        <div class="indecators-box">
-                            <div class="indecator indecator-present me-1">
-                                <span>00</span>
-                            </div>
-                            Present
+                <div class="col-6">
+                    <div class="indecators-box">
+                        <div class="indecator indecator-present me-1">
+                            <span>00</span>
                         </div>
+                        Present
+                    </div>
+                </div>
 
-                        <div class="indecators-box">
-                            <div class="indecator indecator-absent me-1">
-                                <span>00</span>
-                            </div>
-                            Absent
+                <div class="col-6">
+                    <div class="indecators-box">
+                        <div class="indecator indecator-absent me-1">
+                            <span>00</span>
                         </div>
+                        Absent
+                    </div>
+                </div>
 
-                        <div class="indecators-box">
-                            <div class="indecator indecator-leave me-1">
-                                <span>00</span>
-                            </div>
-                            Leave
+                <div class="col-6">
+                    <div class="indecators-box">
+                        <div class="indecator indecator-leave me-1">
+                            <span>00</span>
                         </div>
+                        Leave
+                    </div>
+                </div>
 
-                        <div class="indecators-box">
-                            <div class="indecator indecator-holiday me-1">
-                                <span>00</span>
-                            </div>
-                            Holiday / W.O
+                <div class="col-6">
+                    <div class="indecators-box">
+                        <div class="indecator indecator-holiday me-1">
+                            <span>00</span>
                         </div>
-
-                    </div> <!-- /.indecators container -->
-
+                        Holiday / W.O
+                    </div>
                 </div>
 
             </div>

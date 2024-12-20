@@ -33,7 +33,8 @@ $offcanvas-dark-background:rgba(19, 30, 43, 0.4);
 }
 
 .offcanvas-top{bottom:auto; margin-top:calc(10px + env(safe-area-inset-top));}
-.offcanvas-bottom{top:auto;}
+.offcanvas-bottom{top:0;}
+.offcanvas-bottom.offcanvas-detached{top:auto;}
 .offcanvas-start{right:auto;}
 .offcanvas-end{left:auto;}
 .offcanvas-bottom, .offcanvas-top{height:auto;}
